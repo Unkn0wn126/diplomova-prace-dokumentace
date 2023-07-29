@@ -1,0 +1,36 @@
+ifndef::imagesdir[:imagesdir: ../../images]
+
+[#sec:menuBar]
+== Nástrojová lišta
+
+Nástrojová lišta (<<fig:menuBar.menuBarItems>>) se nachází ve vrchní sekci okna aplikace.
+
+.Položky nástrojové lišty
+image::2023-07-29T16-37-57-912Z.png[Položky nástrojové lišty,id="fig:menuBar.menuBarItems"] 
+
+Nabídky v liště a jejich funkce jsou následující:
+
+Soubor::
+    Nový (Ctrl + N):::
+        Vytvoří nový projekt
+    Otevřít (Ctrl + O):::
+        Otevře dialog pro otevření uloženého projektu
+    Uložit (Ctrl + S):::
+        Uloží projekt
+    Uložit jako... (Ctrl + Shift + S):::
+        Otevře dialog pro uložení projektu
+Upravit::
+    Definovat scény:::
+        Otevře okno pro definici a následnou generaci scén
+Import::
+    Model:::
+        Otevře dialog pro import modelu z některého z podporovaných formátů.
+// TODO supported formats section
+    Model z JSON:::
+        Otevře dialog pro import modelu ze souboru typu JSON s formátem, který využívá tato aplikace.
+Export::
+    Model do JSON:::
+        Otevře dialog pro výběr souboru typu JSON, do kterého se uloží zobrazovaný model ve formátu používaném touto aplikací.
+Nápověda::
+    Návod:::
+        Otevře tuto dokumentaci v prohlížeči

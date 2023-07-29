@@ -1,0 +1,20 @@
+ifndef::imagesdir[:imagesdir: ../../images]
+
+[#sec:switchScreens]
+== Změna režimu hlavní obrazovky
+
+Pro započetí změny režimu aktivní obrazovky je potřeba poklepáním levého tlačítka myši otevřít rozbalovací nabídku obrazovek (<<fig:switchScreens.activeScreenComboBox>>).
+
+.Rozbalovací nabídka s aktivní obrazovkou
+image::2023-07-29T16-44-01-232Z.png[Rozbalovací nabídka s aktivní obrazovkou,id="fig:switchScreens.activeScreenComboBox"] 
+
+Poté stačí levým tlačítkem myši vybrat požadovanou obrazovku (<<fig:switchScreens.screensOptions>>).
+Jak je patrné, v současnou chvíli je podporována výchozí obrazovka Model a obrazovka Scény.
+
+.Možnosti rozbalovací nabídky obrazovek
+image::2023-07-29T17-21-01-391Z.png[Možnosti rozbalovací nabídky obrazovek,id="fig:switchScreens.screensOptions"] 
+
+Po výběru možnosti je hlavní okno automaticky aktualizováno dle volby (<<fig:switchScreens.sceneScreen>>).
+
+.Podoba hlavní obrazovky po změně aktivního režimu
+image::2023-07-29T17-24-48-573Z.png[Podoba hlavní obrazovky po změně aktivního režimu,id="fig:switchScreens.sceneScreen"] 

@@ -6,25 +6,37 @@ ifndef::imagesdir[:imagesdir: ../../images]
 
 V této sekci je popsán způsob práce s grafickým uživatelským rozhraním aplikace pro koncového uživatele.
 
+[#sec:launchApp]
 == Spuštění aplikace
 
 Windows::
 
-Aplikaci je potřeba spustit pomocí souboru "DiplomovaPraceFrontend.exe" (<<fig:windowsExeFile>>).
+Aplikaci je potřeba spustit pomocí souboru "DiplomovaPraceFrontend.exe" (<<fig:launchApp.windowsExeFile>>).
 
 .Soubor DiplomovaPraceFrontend.exe
-image::2023-07-29T12-20-25-722Z.png[Soubor DiplomovaPraceFrontend.exe,id="fig:windowsExeFile"] 
+image::2023-07-29T12-20-25-722Z.png[Soubor DiplomovaPraceFrontend.exe,id="fig:launchApp.windowsExeFile"] 
 
 Linux::
 
 Aplikaci je potřeba spustit pomocí souboru "..."
+// TODO
 
 
-Jakmile je aplikace spuštěna, zobrazí se výchozí obrazovka (<<fig:openedApplication>>).
+Jakmile je aplikace spuštěna, zobrazí se výchozí obrazovka (<<fig:launchApp.openedApplication>>).
 
 .Aplikace po otevření
-image::2023-07-29T12-43-51-075Z.png[Aplikace po otevření,id="fig:openedApplication"] 
+image::2023-07-29T12-43-51-075Z.png[Aplikace po otevření,id="fig:launchApp.openedApplication"] 
 
 include::./gui_layout.adoc[]
 
-include::./gui_console.adoc[]
+include::./gui_project_management.adoc[]
+
+include::./gui_backend_connection.adoc[]
+
+include::./gui_model_management.adoc[]
+
+include::./gui_scene_generation.adoc[]
+
+include::./gui_scene_management.adoc[]
+
+include::./gui_example.adoc[]

@@ -2,3 +2,22 @@ ifndef::imagesdir[:imagesdir: ../../images]
 
 [#sec:popupWindows]
 == Vyskakovací okna
+
+V aplikaci jsou vyskakovací okna využívána pro zobrazování zpráv uživateli či nastavení některých parametrů.
+Dokud je dané vyskakovací okno aktivní, nelze zpravidla interagovat se zbytkem aplikace.
+
+Vyskakovací okno je vyjma okna informujícího o probíhající operaci možné zavřít pomocí tlačítka křížku v jeho pravém horním rohu.
+
+Vyskakovací okna se zprávou::
+
+Vyskakovací okna sloužící k zobrazování zpráv uživateli lze vždy zavřít pomocí tlačítka křížku v jeho pravém horním rohu či pomocí tlačítka Ok dole.
+Jsou trojího typu: informativní (<<fig:popupWindows.infoPopupWindow>>), varovná (<<fig:popupWindows.warningPopupWindow>>) a chybová (<<fig:popupWindows.errorPopupWindow>>).
+
+.Příklad okna s informativní zprávou
+image::2023-07-29T17-30-58-028Z.png[Příklad okna s informativní zprávou,id="fig:popupWindows.infoPopupWindow"] 
+
+.Příklad okna s varovnou zprávou
+image::2023-07-29T17-31-18-480Z.png[Příklad okna s varovnou zprávou,id="fig:popupWindows.warningPopupWindow"] 
+
+.Příklad okna s chybovou zprávou
+image::2023-07-29T17-31-41-414Z.png[Příklad okna s chybovou zprávou,id="fig:popupWindows.errorPopupWindow"] 

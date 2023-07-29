@@ -1,0 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../images]
+
+[#sec:sampleUsage]
+== Ukázkový scénář použití aplikace

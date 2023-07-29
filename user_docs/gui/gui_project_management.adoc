@@ -1,0 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../images]
+
+[#sec:projectManagement]
+== Správa projektu

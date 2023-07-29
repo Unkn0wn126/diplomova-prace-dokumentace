@@ -1,0 +1,17 @@
+ifndef::imagesdir[:imagesdir: ../../images]
+
+[#sec:mainWindow]
+== Hlavní obrazovka
+
+Hlavní obrazovka (<<fig:mainWindow.defaultMainScreen>>) se nachází ve třetí sekci okna aplikace.
+Většina interakcí s funkcemi této aplikace pro daný režim probíhají právě v této části.
+
+V současnou chvíli jsou pro tuto obrazovku podporovány následující režimy:
+
+* Model
+* Scény
+
+Pro způsob jejich přepínání viz <<sec:switchScreens>>
+
+.Výchozí obsah hlavní obrazovky
+image::2023-07-29T17-03-01-645Z.png[Výchozí obsah hlavní obrazovky,id="fig:mainWindow.defaultMainScreen"] 

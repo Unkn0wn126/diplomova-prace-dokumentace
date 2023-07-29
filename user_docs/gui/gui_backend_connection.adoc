@@ -1,0 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../images]
+
+[#sec:backendConnection]
+== Připojení k backendu

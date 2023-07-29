@@ -1,0 +1,22 @@
+ifndef::imagesdir[:imagesdir: ../../images]
+
+[#sec:buttonsPanel]
+== Stavový panel
+
+Stavový panel (<<fig:buttonsPanel.buttonsPanel>>) se nachází ve druhé sekci okna aplikace.
+Jeho účelem je uživateli umožnit změnu aktivní obrazovky (<<fig:buttonsPanel.connectButton>>), připojit se k backendu (<<fig:buttonsPanel.activeScreenComboBox>>) a informovat ho o momentálním stavu připojení (<<fig:buttonsPanel.connectionStatusInfo>>).
+
+.Stavový panel
+image::2023-07-29T16-41-08-624Z.png[Stavový panel,id="fig:buttonsPanel.buttonsPanel"] 
+
+.Rozbalovací nabídka s aktivní obrazovkou
+image::2023-07-29T16-44-01-232Z.png[Rozbalovací nabídka s aktivní obrazovkou,id="fig:buttonsPanel.activeScreenComboBox"] 
+
+//.Název projektu
+//image::2023-07-29T16-44-17-098Z.png[Název projektu,id="fig:buttonsPanel.projectNameLabel"] 
+
+.Tlačítko Připojit se
+image::2023-07-29T16-44-26-516Z.png[Tlačítko Připojit se,id="fig:buttonsPanel.connectButton"] 
+
+.Ikonka stavu připojení
+image::2023-07-29T16-44-37-380Z.png[Ikonka stavu připojení,id="fig:buttonsPanel.connectionStatusInfo"] 

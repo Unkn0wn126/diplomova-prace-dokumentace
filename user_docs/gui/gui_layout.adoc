@@ -3,51 +3,43 @@ ifndef::imagesdir[:imagesdir: ../../images]
 [#sec:basicAppLayout]
 == Základní rozhraní aplikace
 
-Okno aplikace je obecně rozděleno do 4 sekcí (viz <<fig:applicationLayout>>).
+Okno aplikace je obecně rozděleno do 4 sekcí (viz <<fig:basicAppLayout.applicationLayout>>).
 
 .Rozdělení aplikace
-image::2023-07-29T13-28-19-773Z.png[Rozdělení aplikace,id="fig:applicationLayout"] 
+image::2023-07-29T13-28-19-773Z.png[Rozdělení aplikace,id="fig:basicAppLayout.applicationLayout"] 
 
-V první sekci (<<fig:toolBar>>) se nachází nástrojová lišta podobně jako ve standardních aplikacích.
-Nabídky v liště a jejich funkce jsou následující:
-
-Soubor::
-    Nový (Ctrl + N):::
-        Vytvoří nový projekt
-    Otevřít (Ctrl + O):::
-        Otevře dialog pro otevření uloženého projektu
-    Uložit (Ctrl + S):::
-        Uloží projekt
-    Uložit jako... (Ctrl + Shift + S)::
-        Otevře dialog pro uložení projektu
-Upravit::
-    Definovat scény:::
-        Otevře okno pro definici a následnou generaci scén
-Import::
-    Model:::
-        Otevře dialog pro import modelu z některého z podporovaných formátů.
-// TODO supported formats section
-    Model z JSON:::
-        Otevře dialog pro import modelu ze souboru typu JSON s formátem, který využívá tato aplikace.
-Export::
-    Model do JSON:::
-        Otevře dialog pro výběr souboru typu JSON, do kterého se uloží zobrazovaný model ve formátu používaném touto aplikací.
-Nápověda::
-    Návod:::
-        Otevře tuto dokumentaci v prohlížeči
+V první sekci (<<fig:basicAppLayout.menuBar>>) se nachází nástrojová lišta podobně jako ve standardních aplikacích.
+Pro její položky a bližší informace viz <<sec:menuBar>>
 
 .Nástrojová lišta
-image::2023-07-29T13-39-53-486Z.png[Nástrojová lišta,id="fig:toolBar"] 
+image::2023-07-29T13-39-53-486Z.png[Nástrojová lišta,id="fig:basicAppLayout.menuBar"] 
 
-image::2023-07-29T15-13-41-633Z.png[] 
+Pod nástrojovou lištou se nachází stavový panel s dalšími ovládacími prvky (<<fig:basicAppLayout.buttonsPanel>>).
+Je vždy viditelný a jeho účelem je umožnit přepínání mezi zrovna aktivní obrazovkou (viz <<sec:mainWindow>>), umožnit připojení k backendu a informovat uživatele o momentálním stavu připojení k backendu.
+Více viz <<sec:buttonsPanel>>.
+
+.Stavový panel
+image::2023-07-29T15-13-41-633Z.png[Stavový panel,id="fig:basicAppLayout.buttonsPanel"] 
+
+Sekce hlavní obrazovky (<<fig:basicAppLayout.mainScreen>>) slouží k zobrazení a ovládání aktivní obrazovky aplikace. Více viz <<sec:mainWindow>>
 
 .Hlavní obrazovka
-image::2023-07-29T15-14-06-462Z.png[Hlavní obrazovka,id="fig:mainScreen"] 
+image::2023-07-29T15-14-06-462Z.png[Hlavní obrazovka,id="fig:basicAppLayout.mainScreen"] 
 
-Poslední sekce se skládá z konzole pro výstup (<<fig:console>>).
-Jsou do ní zapisovány informační, varovné a chybové zprávy (viz sekce o konzoli).
-// TODO sekce o konzoli
+Poslední sekce se skládá z konzole pro výstup (<<fig:basicAppLayout.console>>).
+Jsou do ní zapisovány informační, varovné a chybové zprávy (viz <<sec:console>>).
 
 .Konzole
-image::2023-07-29T15-14-48-964Z.png[Konzole,id="fig:console"] 
+image::2023-07-29T15-14-48-964Z.png[Konzole,id="fig:basicAppLayout.console"] 
 
+include::./gui_menu_bar.adoc[leveloffset=+1]
+
+include::./gui_buttons_panel.adoc[leveloffset=+1]
+
+include::./gui_main_window.adoc[leveloffset=+1]
+
+include::./gui_switch_screens.adoc[leveloffset=+1]
+
+include::./gui_console.adoc[leveloffset=+1]
+
+include::./gui_popup_windows.adoc[leveloffset=+1]
