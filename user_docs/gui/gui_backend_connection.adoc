@@ -2,3 +2,49 @@ ifndef::imagesdir[:imagesdir: ../../images]
 
 [#sec:backendConnection]
 == Připojení k backendu
+
+Připojení k backendu není nutné pro základní používání aplikace.
+Je jím však podmíněno načítání modelů z jiného formátu než JSON a mocnější způsob generace scén.
+
+Proces připojení započne poklepáním na tlačítko btn:[Připojit se] (<<fig:backendConnection.connectButton>>).
+
+.Tlačítko připojit se
+image::2023-07-29T16-44-26-516Z.png[Tlačítko připojit se,id="fig:backendConnection.connectButton"] 
+
+Poté se zobrazí dialog pro nastavení připojení k backendu (<<fig:backendConnection.backendSettingsDialog>>).
+Zde je nutné zadat url a číslo portu pro připojení k SocketIO na požadovaném backendu.
+Ve výchozím nastavení jsou zde vyplněny hodnoty pro připojení k lokální instanci:
+
+[listing]
+http://localhost:8085
+
+.Dialog pro nastavení připojení k backendu
+image::2023-07-29T17-45-45-232Z.png[Dialog pro nastavení připojení k backendu,id="fig:backendConnection.backendSettingsDialog"] 
+
+Stisknutím tlačítka btn:[Uložit] dojde k uložení vyplněných hodnot na pozdější použití po zavření dialogu.
+Tlačítko btn:[Připojit se] tyto hodnoty též uloží a zároveň způsobí pokus o navázání spojení s backendem, při kterém je dialog automaticky zavřen.
+
+Jelikož se jedná o akci, která může potenciálně trvat delší dobu, je zobrazen dialog načítání (<<fig:backendConnection.loadingDialog>>), který automaticky zmizí jakmile je akce dokončena.
+
+.Dialog informující o probíhající operaci
+image::2023-07-29T17-51-07-501Z.png[Dialog informující o probíhající operaci,id="fig:backendConnection.loadingDialog"] 
+
+Pokud bylo připojení neúspěšné, nebo bylo přerušeno, zobrazí se vysakovací okno s chybou (<<fig:backendConnection.connectionErrorDialog>>).
+
+.Dialog informující o neúšpěšném připojení
+image::2023-07-29T17-53-17-501Z.png[Dialog informující o neúšpěšném připojení,id="fig:backendConnection.connectionErrorDialog"] 
+
+Pokud bylo připojení úspěšné, zobrazí se vyskakovací okno informující o připojení (<<fig:backendConnection.connectionSuccessfulDialog>>).
+Dále se změní barva ikonky připojení z červené na zelenou a text tlačítka btn:[Připojit se] se změní na btn:[Odpojit se] (<<fig:backendConnection.buttonsPanelChangesAfterConnection>>).
+
+.Dialog informující o úšpěšném připojení
+image::2023-07-29T17-55-21-246Z.png[Dialog informující o úšpěšném připojení,id="fig:backendConnection.connectionSuccessfulDialog"] 
+
+.Změny ve stavovém panelu po připojení
+image::2023-07-29T17-58-03-942Z.png[Změny ve stavovém panelu po připojení,id="fig:backendConnection.buttonsPanelChangesAfterConnection"] 
+
+Ukončení spojení s backendem lze provést stisknutím tlačítka btn:[Odpojit se].
+Po ukončení spojení se stavový panel vrátí do původního stavu a zobrazí se vyskakovací okno s datumem a časem ukončení spojení (<<fig:backendConnection.screenAfterDisconnect>>).
+
+.Podoba obrazovky po ukončení spojení s backendem
+image::2023-07-29T18-03-57-196Z.png[Podoba obrazovky po ukončení spojení s backendem,id="fig:backendConnection.screenAfterDisconnect"] 
