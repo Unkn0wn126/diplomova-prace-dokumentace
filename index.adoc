@@ -10,6 +10,7 @@
 :encoding: UTF-8
 :figure-caption: Obrázek
 :figure-refsig: Obr.
+:section-refsig: Kap.
 :xrefstyle: short
 :!chapter-signifier:
 

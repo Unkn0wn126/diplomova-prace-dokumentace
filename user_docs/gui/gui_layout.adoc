@@ -1,5 +1,6 @@
 ifndef::imagesdir[:imagesdir: ../../images]
 
+[#sec:basicAppLayout]
 == Základní rozhraní aplikace
 
 Okno aplikace je obecně rozděleno do 4 sekcí (viz <<fig:applicationLayout>>).
@@ -37,3 +38,16 @@ Nápověda::
 
 .Nástrojová lišta
 image::2023-07-29T13-39-53-486Z.png[Nástrojová lišta,id="fig:toolBar"] 
+
+image::2023-07-29T15-13-41-633Z.png[] 
+
+.Hlavní obrazovka
+image::2023-07-29T15-14-06-462Z.png[Hlavní obrazovka,id="fig:mainScreen"] 
+
+Poslední sekce se skládá z konzole pro výstup (<<fig:console>>).
+Jsou do ní zapisovány informační, varovné a chybové zprávy (viz sekce o konzoli).
+// TODO sekce o konzoli
+
+.Konzole
+image::2023-07-29T15-14-48-964Z.png[Konzole,id="fig:console"] 
+

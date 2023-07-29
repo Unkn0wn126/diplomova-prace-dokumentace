@@ -1,0 +1,30 @@
+ifndef::imagesdir[:imagesdir: ../../images]
+
+[#sec:console]
+== Konzole
+
+Konzole se vždy nachází v poslední sekci obrazovky (viz <<sec:basicAppLayout>>) a slouží k výpisu o prováděných operacích.
+Jsou zde zobrazovány informativní, varovné a chybové zprávy (<<fig:consoleMessagePreview>>).
+
+.Ukázka zpráv v konzoli
+image::2023-07-29T15-18-49-846Z.png[Ukázka zpráv v konzoli,id="fig:consoleMessagePreview"] 
+
+Každá zpráva vypsaná do konzole se vkládá dolu a má následující formát:
+
+[listing]
+Debug|Warn|Error:[dd.MM.yyyy hh:mm:ss]  ZdrojováTřída:  Zpráva
+
+Uživatel nemůže sám ručně měnit pozici ani velikost konzole.
+Její velikost se však automaticky přizpůsobí rozměrům okna (<<fig:consoleNormalWindow>>, <<fig:consoleSmallWindow>>).
+
+.Podoba konzole při normální velikosti okna
+image::2023-07-29T15-23-48-952Z.png[Podoba konzole při normální velikosti okna,id="fig:consoleNormalWindow"] 
+
+.Podopa konzole při malé velikosti okna
+image::2023-07-29T15-42-14-173Z.png[Podopa konzole při malé velikosti okna,id="fig:consoleSmallWindow"] 
+
+Při překročení velikosti konzole se v její pravé části automaticky zobrazí posouvátko umožňující posouvat se v záznamech k předešlým či pozdějším zprávám.
+Při vložení nové zprávy je navíc tento pohled automaticky posunut k nejnovější zprávě, která je vždy nejníže.
+
+.Konzole s větším množstvím zpráv
+image::2023-07-29T15-51-39-037Z.png[Konzole s větším množstvím zpráv,id="fig:consoleWithManyMessages"] 

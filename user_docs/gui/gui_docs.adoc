@@ -1,7 +1,7 @@
 ifndef::imagesdir[:imagesdir: ../../images]
 
 
-= Uživatelská dokumentace grafického rozhraní
+= Uživatelská příručka grafického rozhraní
 
 
 V této sekci je popsán způsob práce s grafickým uživatelským rozhraním aplikace pro koncového uživatele.
@@ -26,3 +26,5 @@ Jakmile je aplikace spuštěna, zobrazí se výchozí obrazovka (<<fig:openedApp
 image::2023-07-29T12-43-51-075Z.png[Aplikace po otevření,id="fig:openedApplication"] 
 
 include::./gui_layout.adoc[]
+
+include::./gui_console.adoc[]
