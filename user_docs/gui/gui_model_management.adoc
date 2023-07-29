@@ -2,3 +2,45 @@ ifndef::imagesdir[:imagesdir: ../../images]
 
 [#sec:modelManagement]
 == Správa modelu
+
+V této sekci jsou popsány nástroje pro správa zobrazovaného modelu.
+
+[#sec:modelScreen]
+=== Obrazovka Model
+
+Obrazovka Model je rozdělena do 4 sekcí (<<fig:modelManagement.modelScreen>>) a slouží ke správě a zobrazení modelu.
+Lze zde otáčet kamerou kolem modelu, aplikovat na něho vybrané transformace a spravovat úchopové body.
+
+.Obrazovka Model
+image::2023-07-29T20-17-35-724Z.png[Obrazovka Model,id="fig:modelManagement.modelScreen"] 
+
+[#sec:sceneMovement]
+=== Pohyb ve scéně
+
+Ve scéně se lze pohybovat pouze otáčením kamery okolo zobrazovaného modelu a jejím přiblížením či oddálením od tohoto modelu.
+Nelze tedy měnit pozici kamery snímající spravovaný model.
+
+Pro otáčení kamerou je nutné držet prostřední tlačítko myši (kbd:[MMB]) a táhnout myší v požadovaném směru.
+Přiblížení a oddálení je prováděno točením kolečka myši v požadovaném směru.
+Otáčení a změnu přiblížení lze iniciovat pouze pokud se kurzor myši nalézá v oblasti pohledu na scénu se spravovaným modelem (<<fig:modelManagement.managedModelView>>).
+
+.Pohled na scénu se spravovaným modelem
+image::2023-07-29T20-19-27-311Z.png[Pohled na scénu se spravovaným modelem,id="fig:modelManagement.managedModelView"] 
+
+.Sekce pro výběr modelu
+image::2023-07-29T20-18-06-983Z.png[Sekce pro výběr modelu,id="fig:modelManagement.selectModelSection"] 
+
+.Seznam úchopových bodů
+image::2023-07-29T20-18-23-236Z.png[Seznam úchopových bodů,id="fig:modelManagement.grabPointsListView"] 
+
+.Panel s vlastnostmi vybrané položky
+image::2023-07-29T20-18-40-509Z.png[Panel s vlastnostmi vybrané položky,id="fig:modelManagement.transformInfoPanel"] 
+
+[#sec:modelTransform]
+=== Transformace modelu
+
+[#sec:loadModelFromFile]
+=== Načtení modelu ze souboru
+
+[#sec:exportModelToJson]
+=== Exportování modelu do JSON souboru

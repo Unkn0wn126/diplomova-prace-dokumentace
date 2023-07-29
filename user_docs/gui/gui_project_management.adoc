@@ -16,7 +16,7 @@ Vždy lze mít v aplikaci načtený pouze jeden projekt, ale zároveň je možn�
 === Vytvoření nového projektu
 
 Nový projekt je automaticky vytvořen při prvním otevření aplikace.
-Později jej lze však také vytvořit manuálně pomocí nabídky menu:Soubor[Nový (Ctrl + N)] v nástrojové liště (viz <<sec:menuBar>>) nebo pomocí klávesové zkratky kbd:[Ctrl+N].
+Později jej lze však také vytvořit manuálně pomocí nabídky menu:Soubor[Nový (Ctrl + N)] v nástrojové liště (viz <<sec:menuBar>>) nebo pomocí klávesové zkratky kbd:[Ctrl + N].
 
 Po vytvoření nového projektu se zobrazí informativní dialog o dokončené operaci (<<fig:projectManagement.newProjectCreatedDialog>>).
 Nutno podotknout, že tato operace vždy vede k přepnutí aktivní obrazovky do režimu Model.
@@ -28,7 +28,7 @@ image::2023-07-29T18-13-52-044Z.png[Dialog po vytvoření nového projektu,id="f
 === Uložení projektu
 
 Po provedení požadovaných operací je možné projekt uložit pomocí nabídek v nástrojové liště (viz <<sec:menuBar>>) menu:Soubor[Uložit (Ctrl + S)] a menu:Soubor[Uložit jako... (Ctrl + Shift + S)], pokud je potřeba vybrat jiné místo pro uložení projektu.
-Alternativně lze ke stejnému účelu využít klávesových zkratek kbd:[Ctrl+S] a kbd:[Ctrl+Shift+S].
+Alternativně lze ke stejnému účelu využít klávesových zkratek kbd:[Ctrl + S] a kbd:[Ctrl + Shift + S].
 
 První zmíněná možnost provede uložení do naposledy použitého souboru, pokud takový existuje.
 V opačném případě se zachová jako druhá zmíněná možnost a umožní výběr požadovaného souboru.
@@ -55,7 +55,7 @@ Nutno upozornit, že při uložení projektu nedochází k uložení transformac
 [#sec:loadProject]
 === Načtení projektu ze souboru
 
-Projekt lze načíst pomocí nabídky menu:Soubor[Otevřít (Ctrl + O)] v nástrojové liště (viz <<sec:menuBar>>) či klávesovou zkratkou kbd:[Ctrl+O].
+Projekt lze načíst pomocí nabídky menu:Soubor[Otevřít (Ctrl + O)] v nástrojové liště (viz <<sec:menuBar>>) či klávesovou zkratkou kbd:[Ctrl + O].
 Pro výběr souboru, ze kterého se má projekt načíst se zobrazí dialog pro výběr souboru (<<fig:projectManagement.loadProjectDialog>>).
 Jak je zřejmé, i zde lze pracovat pouze se soubory s koncovkou _.json_.
 
