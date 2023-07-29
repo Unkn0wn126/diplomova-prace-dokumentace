@@ -10,19 +10,19 @@ V této sekci je popsán způsob práce s grafickým uživatelským rozhraním a
 
 Windows::
 
-Aplikaci je potřeba spustit pomocí souboru "DiplomovaPraceFrontend.exe" (<<windowsExeFile>>).
+Aplikaci je potřeba spustit pomocí souboru "DiplomovaPraceFrontend.exe" (<<fig:windowsExeFile>>).
 
 .Soubor DiplomovaPraceFrontend.exe
-image::2023-07-29T12-20-25-722Z.png[Soubor DiplomovaPraceFrontend.exe,id="windowsExeFile",align="center"] 
+image::2023-07-29T12-20-25-722Z.png[Soubor DiplomovaPraceFrontend.exe,id="fig:windowsExeFile"] 
 
 Linux::
 
 Aplikaci je potřeba spustit pomocí souboru "..."
 
 
-Jakmile je aplikace spuštěna, zobrazí se výchozí obrazovka (<<openedApplication>>).
+Jakmile je aplikace spuštěna, zobrazí se výchozí obrazovka (<<fig:openedApplication>>).
 
 .Aplikace po otevření
-image::2023-07-29T12-43-51-075Z.png[Aplikace po otevření,id="openedApplication",align="center] 
+image::2023-07-29T12-43-51-075Z.png[Aplikace po otevření,id="fig:openedApplication"] 
 
 include::./gui_layout.adoc[]

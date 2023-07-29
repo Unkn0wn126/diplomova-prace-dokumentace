@@ -1,2 +1,39 @@
+ifndef::imagesdir[:imagesdir: ../../images]
+
 == Základní rozhraní aplikace
 
+Okno aplikace je obecně rozděleno do 4 sekcí (viz <<fig:applicationLayout>>).
+
+.Rozdělení aplikace
+image::2023-07-29T13-28-19-773Z.png[Rozdělení aplikace,id="fig:applicationLayout"] 
+
+V první sekci (<<fig:toolBar>>) se nachází nástrojová lišta podobně jako ve standardních aplikacích.
+Nabídky v liště a jejich funkce jsou následující:
+
+Soubor::
+    Nový (Ctrl + N):::
+        Vytvoří nový projekt
+    Otevřít (Ctrl + O):::
+        Otevře dialog pro otevření uloženého projektu
+    Uložit (Ctrl + S):::
+        Uloží projekt
+    Uložit jako... (Ctrl + Shift + S)::
+        Otevře dialog pro uložení projektu
+Upravit::
+    Definovat scény:::
+        Otevře okno pro definici a následnou generaci scén
+Import::
+    Model:::
+        Otevře dialog pro import modelu z některého z podporovaných formátů.
+// TODO supported formats section
+    Model z JSON:::
+        Otevře dialog pro import modelu ze souboru typu JSON s formátem, který využívá tato aplikace.
+Export::
+    Model do JSON:::
+        Otevře dialog pro výběr souboru typu JSON, do kterého se uloží zobrazovaný model ve formátu používaném touto aplikací.
+Nápověda::
+    Návod:::
+        Otevře tuto dokumentaci v prohlížeči
+
+.Nástrojová lišta
+image::2023-07-29T13-39-53-486Z.png[Nástrojová lišta,id="fig:toolBar"] 
