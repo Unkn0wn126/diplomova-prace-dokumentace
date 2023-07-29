@@ -27,7 +27,7 @@ image::2023-07-29T18-13-52-044Z.png[Dialog po vytvoření nového projektu,id="f
 [#sec:saveProject]
 === Uložení projektu
 
-Po provedení požadovaných operací je možné projekt uložit pomocí nabídky menu:Soubor[Uložit (Ctrl + S)] či menu:Soubor[Uložit jako... (Ctrl + Shift + S)] pokud je potřeba vybrat jiné místo pro uložení projektu.
+Po provedení požadovaných operací je možné projekt uložit pomocí nabídek v nástrojové liště (viz <<sec:menuBar>>) menu:Soubor[Uložit (Ctrl + S)] a menu:Soubor[Uložit jako... (Ctrl + Shift + S)], pokud je potřeba vybrat jiné místo pro uložení projektu.
 Alternativně lze ke stejnému účelu využít klávesových zkratek kbd:[Ctrl+S] a kbd:[Ctrl+Shift+S].
 
 První zmíněná možnost provede uložení do naposledy použitého souboru, pokud takový existuje.
@@ -36,16 +36,42 @@ V opačném případě se zachová jako druhá zmíněná možnost a umožní v�
 Pro výběr souboru, do kterého se má projekt uložit se zobrazí dialog pro výběr souboru (<<fig:projectManagement.saveProjectDialog>>).
 Tento dialog nevznikl jako součást této aplikace a bylo jej nutné použít pro získání možnosti interakce se soubory v sestaveném projektu Unity.
 
-.Dialog pro uložení souboru
-image::2023-07-29T18-26-30-644Z.png[Dialog pro uložení souboru,id="fig:projectManagement.saveProjectDialog"] 
+.Dialog pro uložení souboru projektu
+image::2023-07-29T18-26-30-644Z.png[Dialog pro uložení souboru projektu,id="fig:projectManagement.saveProjectDialog"] 
 
 Projektu je potřeba přiřadit jméno (<<fig:projectManagement.saveProjectDialogWithFilledName>>).
 To v rámci dialogu nemusí obsahovat koncovku formátu uloženého projektu (.json) a v případě její absence bude automaticky přidána.
 
-.Dialog pro uložení souboru s vyplněným jménem
-image::2023-07-29T18-30-56-056Z.png[Dialog pro uložení souboru s vyplněným jménem,id="fig:projectManagement.saveProjectDialogWithFilledName"] 
+.Dialog pro uložení souboru projektu s vyplněným jménem
+image::2023-07-29T18-30-56-056Z.png[Dialog pro uložení souboru projektu s vyplněným jménem,id="fig:projectManagement.saveProjectDialogWithFilledName"] 
 
 Po úspěšném uložení je zobrazen dialog zobrazující plnou cestu k uloženému souboru (<<fig:projectManagement.projectSavedSuccessfullyDialog>>).
 
 .Dialog informující o úšpěšném uložení projektu
 image::2023-07-29T18-31-59-385Z.png[Dialog informující o úšpěšném uložení projektu,id="fig:projectManagement.projectSavedSuccessfullyDialog"] 
+
+Nutno upozornit, že při uložení projektu nedochází k uložení transformací kamery sloužící k náhledu na zobrazovaný model, ani k uložení aktivního režimu obrazovky či vybraných položek v seznamu.
+
+[#sec:loadProject]
+=== Načtení projektu ze souboru
+
+Projekt lze načíst pomocí nabídky menu:Soubor[Otevřít (Ctrl + O)] v nástrojové liště (viz <<sec:menuBar>>) či klávesovou zkratkou kbd:[Ctrl+O].
+Pro výběr souboru, ze kterého se má projekt načíst se zobrazí dialog pro výběr souboru (<<fig:projectManagement.loadProjectDialog>>).
+Jak je zřejmé, i zde lze pracovat pouze se soubory s koncovkou _.json_.
+
+.Dialog pro otevření souboru projektu
+image::2023-07-29T19-48-20-230Z.png[Dialog pro otevření souboru projektu,id="fig:projectManagement.loadProjectDialog"] 
+
+V případě, že nahrávaný soubor neobsahuje validní data projektu, zobrazí se okno s chybou a do konzole bude chyba vypsána též (<<fig:projectManagement.loadInvalidProjectFileResult>>).
+
+.Výsledek pokusu o načtení nevalidního souboru
+image::2023-07-29T19-55-34-774Z.png[Výsledek pokusu o načtení nevalidního souboru,id="fig:projectManagement.loadInvalidProjectFileResult"] 
+
+Pokud byl projekt ze souboru úspěšně načten, zobrazí se dialogové okno a informace je též zapsána do konzole (<<fig:projectManagement.loadProjectSuccess>>).
+Režim obrazovky se zároveň přepne na Model a s projektem je poté možné dále pracovat (<<fig:projectManagement.exampleProjectLoadedFromFile>>).
+
+.Výsledek úspěšného načtení projektu ze souboru
+image::2023-07-29T19-58-13-017Z.png[Výsledek úspěšného načtení projektu ze souboru,id="fig:projectManagement.loadProjectSuccess"] 
+
+.Příklad projektu načteného ze souboru
+image::2023-07-29T20-00-17-051Z.png[Příklad projektu načteného ze souboru,id="fig:projectManagement.exampleProjectLoadedFromFile"] 

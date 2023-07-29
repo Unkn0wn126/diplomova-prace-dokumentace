@@ -35,6 +35,8 @@ include::./gui_backend_connection.adoc[]
 
 include::./gui_model_management.adoc[]
 
+include::./gui_grabpoints_management.adoc[]
+
 include::./gui_scene_generation.adoc[]
 
 include::./gui_scene_management.adoc[]
