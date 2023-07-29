@@ -1,0 +1,21 @@
+:docinfo: shared
+:doctype: book
+:toc: left
+:toc-title: Obsah
+:toclevels: 3
+:sectnums:
+:sectlinks:
+:imagesdir: ./images
+:icons: font
+:encoding: UTF-8
+:figure-caption: Obrázek
+:figure-refsig: Obr.
+:xrefstyle: short
+:!chapter-signifier:
+
+:leveloffset: 0
+
+= Dokumentace aplikace na generování umělých datových sad
+:nofooter:
+
+include::./user_docs/user_docs.adoc[leveloffset=+1]

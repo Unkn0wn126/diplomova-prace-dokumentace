@@ -1,0 +1,28 @@
+ifndef::imagesdir[:imagesdir: ../../images]
+
+
+= Uživatelská dokumentace grafického rozhraní
+
+
+V této sekci je popsán způsob práce s grafickým uživatelským rozhraním aplikace pro koncového uživatele.
+
+== Spuštění aplikace
+
+Windows::
+
+Aplikaci je potřeba spustit pomocí souboru "DiplomovaPraceFrontend.exe" (<<windowsExeFile>>).
+
+.Soubor DiplomovaPraceFrontend.exe
+image::2023-07-29T12-20-25-722Z.png[Soubor DiplomovaPraceFrontend.exe,id="windowsExeFile",align="center"] 
+
+Linux::
+
+Aplikaci je potřeba spustit pomocí souboru "..."
+
+
+Jakmile je aplikace spuštěna, zobrazí se výchozí obrazovka (<<openedApplication>>).
+
+.Aplikace po otevření
+image::2023-07-29T12-43-51-075Z.png[Aplikace po otevření,id="openedApplication",align="center] 
+
+include::./gui_layout.adoc[]
