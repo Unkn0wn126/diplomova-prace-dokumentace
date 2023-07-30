@@ -22,11 +22,15 @@ Nelze tedy měnit pozici kamery snímající spravovaný model.
 
 Pro otáčení kamerou je nutné držet prostřední tlačítko myši (kbd:[MMB]) a táhnout myší v požadovaném směru.
 Přiblížení a oddálení je prováděno točením kolečka myši v požadovaném směru.
+
+[NOTE]
+====
 Otáčení a změnu přiblížení lze iniciovat pouze pokud se kurzor myši nalézá v oblasti pohledu na scénu se spravovaným modelem (<<fig:modelManagement.managedModelView>>).
 Akce otáčení je však po započetí platná i po opuštění této oblasti až do okamžiku puštění prostředního tlačítka myši.
 
 .Pohled na scénu se spravovaným modelem
 image::2023-07-29T20-19-27-311Z.png[Pohled na scénu se spravovaným modelem,id="fig:modelManagement.managedModelView"] 
+====
 
 [#sec:modelTransform]
 === Transformace modelu
@@ -132,6 +136,6 @@ image::2023-07-30T11-17-41-774Z.png[Dialog pro výběr souboru, do kterého má 
 Do výsledného souboru se vyjma samotné geometrické sítě modelu ukládají také jeho pozice, rotace a velikost.
 ====
 
-Provedením těchto kroků byl model úspěšně exportován.
+Provedením těchto kroků bude model úspěšně exportován.
 
 // TODO dialog o úspěšném exportu?

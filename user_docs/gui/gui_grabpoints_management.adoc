@@ -3,8 +3,126 @@ ifndef::imagesdir[:imagesdir: ../../images]
 [#sec:grabPointsManagement]
 == Správa úchopových bodů
 
+Úchopové body v aplikaci slouží pro označení míst modelu, za která může být objekt uchopen.
+V rámci této aplikace jsou úchopové body reprezentovány žlutým modelem křížku.
+V této sekci je popsáno jak tyto body vytvářet, mazat a modifikovat.
+
+[#sec:grabPointCreationAndDeletion]
+=== Vytvoření a mazání úchopového bodu
+
+Každý vytvořený úchopový bod je zobrazen v seznamu úchopových bodů (<<fig:grabPointsManagement.grabPointsListView>>).
+Ve výchozím stavu nejsou vytvořeny žádné úchopové body, a proto je tento seznam prázdný.
+
 .Seznam úchopových bodů
 image::2023-07-29T20-18-23-236Z.png[Seznam úchopových bodů,id="fig:grabPointsManagement.grabPointsListView"] 
 
+Proces vytvoření úchopového bodu je iniciován přesunutím kurzoru myši na zobrazovaný model.
+Tímto krokem se na modelu zobrazí náhled pozice a rotace úchopového bodu (<<fig:grabPointsManagement.grabPointPreview>>).
+
+Samotné vytvoření úchopového bodu proběhne stisknutím levého tlačítka myši btn:[LMB] na požadované pozici.
+Úchopový bod je poté vytvořen jak ve scéně spravovaného modelu, tak v seznamu úchopových bodů vlevo (<<fig:grabPointsManagement.grabPointCreated>>).
+
+Počet úchopových bodů není omezen (<<fig:grabPointsManagement.multipleGrabPoints>>).
+Zároveň však není možné v této verzi aplikace daný úchopový bod pojmenovat.
+
+.Náhled úchopového bodu před umístěním
+image::2023-07-30T13-30-24-942Z.png[Náhled úchopového bodu před umístěním,id="fig:grabPointsManagement.grabPointPreview"] 
+
+.Vytvořený úchopový bod
+image::2023-07-30T13-34-14-667Z.png[Vytvořený úchopový bod,id="fig:grabPointsManagement.grabPointCreated"] 
+
+.Vícero úchopových bodů
+image::2023-07-30T13-36-10-114Z.png[Vícero úchopových bodů,id="fig:grabPointsManagement.multipleGrabPoints"] 
+
+Úchopové body lze smazat stisknutím tlačítka křížku (btn:[X]) v levé části položky v seznamu úchopových bodů.
+Po smazání z tohoto seznamu je automaticky aktualizován také stav ve scéně se spravovaným modelem (<<fig:grabPointsManagement.grabPointsAfterDeletion>>).
+
+.Úchopové body po smazání
+image::2023-07-30T13-39-39-975Z.png[Úchopové body po smazání,id="fig:grabPointsManagement.grabPointsAfterDeletion"] 
+
+[NOTE]
+====
+Rotace úchopových bodů se vždy orientuje dle směru normál plošky, na kterou jsou umístěny (<<fig:grabPointsManagement.grabPointsWithRotationByNormals>>).
+V případě potřeby jiného úhlu natočení je možné úchopový bod dodatečně natočit do jiného úhlu (viz <<sec:grabPointTransform>>).
+
+.Úchopové body s rotací dle normál plošek
+image::2023-07-30T13-44-19-257Z.png[Úchopové body s rotací dle normál plošek,id="fig:grabPointsManagement.grabPointsWithRotationByNormals"] 
+====
+
+[#sec:grabPointSelection]
+=== Výběr úchopového bodu
+
+Pro výběr úchopového bodu stačí poklepat na příslušnou položku v seznamu úchopových bodů (viz <<fig:grabPointsManagement.grabPointsListView>>).
+Po výběru daného úchopového bodu se příslušné položce v seznamu změní barva a samotný úchopový bod ve scéně se zbarví do oranžova (<<fig:grabPointsManagement.screenAfterGrabPointSelection>>).
+Dále se v pravém panelu vlastností zobrazí pozice, rotace a velikost daného úchopového bodu.
+
+[NOTE]
+====
+Vždy lze vybrat pouze jeden úchopový bod a příslušné zbarvení má vždy pouze ten, který je vybraný.
+Výběrem jiného úchopového bodu dojde ke změně aktivního úchopového bodu.
+====
+
+[WARNING]
+====
+Výběrem modelu (viz <<sec:modelTransform>>) či smazáním právě vybraného úchopového bodu dojde ke zrušení výběru úchopového bodu a panel Vlastnosti se vrátí do původního stavu.
+====
+
+.Úchopový bod po výběru
+image::2023-07-30T13-48-43-007Z.png[Úchopový bod po výběru,id="fig:grabPointsManagement.screenAfterGrabPointSelection"] 
+
+[#sec:grabPointTransform]
+=== Transformace úchopového bodu
+
+Na vybraném úchopovém bodu lze provádět transformace otáčení, posunu a změny velikosti.
+Transformace lze na úchopovém bodu provádět pouze prostřednictvím panelu Vlastnosti v pravé straně obrazovky Model (<<fig:grabPointsManagement.transformInfoPanel>>).
+
+Ve výchozím nastavení zde tyto vlastnosti zobrazeny nejsou a pro jejich zobrazení je nutné vybrat úchopový bod ze seznamu Úchopové body v levé spodní straně obrazovky (viz <<sec:grabPointSelection>>).
+
 .Panel s vlastnostmi vybraného úchopového bodu
 image::2023-07-29T20-18-40-509Z.png[Panel s vlastnostmi vybraného úchopového bodu,id="fig:grabPointsManagement.transformInfoPanel"] 
+
+Po vybrání modelu se automaticky zobrazí aktuální pozice a rotace vybraného úchopového bodu (<<fig:grabPointsManagement.transformInfoPanelWithGrabPointInfo>>).
+Zobrazené hodnoty lze modifikovat najetím myši nad některou z nich, podržením levého tlačítka myši (btn:[LMB]) a tažením vlevo či vpravo pro snížení či zvýšení dané hodnoty.
+Dále je možné zadat do daného pole hodnotu přímo, avšak v tomto případě dojde k aktualizaci hodnot ve scéně až po stisku klávesy btn:[ENTER] či kliknutím levého tlačítka myši (btn:[LMB]) mimo dané pole.
+
+.Panel zobrazující vlastnosti úchopového bodu
+image::2023-07-30T14-04-50-981Z.png[Panel zobrazující vlastnosti úchopového bodu,id="fig:grabPointsManagement.transformInfoPanelWithGrabPointInfo"] 
+
+Pozice je vyjádřena pomocí hodnot X, Y a Z, které reprezentují třírozměrný vektor.
+Možné hodnoty pro tyto 3 vlastnosti se zde pohybují v rozsahu -100 až 100.
+
+Tato pozice je vždy vyjádřena v lokálním souřadnicovém systému zobrazovaného objektu (<<fig:grabPointsManagement.grabPointWithTransformedPosition>>), a tudíž nejsou směry jednotlivých os ovlivněny aktuální rotací úchopového bodu, nýbrž aktuální rotací zobrazovaného modelu (<<fig:grabPointsManagement.grabPointWithTransformedPositionAndRotation>>, <<fig:grabPointsManagement.grabPointWithTransformedPositionAndRotationOnRotatedAndTranslatedModel>>).
+Hodnoty se tedy zobrazují stejné, ačkoliv je daný úchopový bod ve skutečnosti na odlišné pozici v prostoru.
+
+.Úchopový bod se změněnou pozicí
+image::2023-07-30T14-07-03-725Z.png[Úchopový bod se změněnou pozicí,id="fig:grabPointsManagement.grabPointWithTransformedPosition"] 
+
+.Úchopový se změněnou pozicí a rotací
+image::2023-07-30T14-07-30-477Z.png[Úchopový se změněnou pozicí a rotací,id="fig:grabPointsManagement.grabPointWithTransformedPositionAndRotation"] 
+
+.Úchopový se změněnou pozicí a rotací na rotovaném a posunutém modelu
+image::2023-07-30T14-08-09-276Z.png[Úchopový se změněnou pozicí a rotací na rotovaném a posunutém modelu,id="fig:grabPointsManagement.grabPointWithTransformedPositionAndRotationOnRotatedAndTranslatedModel"] 
+
+Rotace je zde vyjádřena pomocí hodnoty X, Y, Z a W, které reprezentují Quaternion rotace.
+Aby byly zadávané hodnoty validní pro rotaci, pohybují se zde možné hodnoty v rozsahu -1 až 1.
+Zároveň jsou při změně jedné hodnoty příslušně aktualizované všechny ostatní, aby byla dodržena validita Quaternionu pro rotace (<<fig:grabPointsManagement.xRotChangeUnconfirmed>>, <<fig:grabPointsManagement.xRotChangeConfirmed>>).
+
+.Úchopový bod se zadávanou změnou hodnoty X pro rotaci
+image::2023-07-30T14-09-09-282Z.png[Úchopový bod se zadávanou změnou hodnoty X pro rotaci,id="fig:grabPointsManagement.xRotChangeUnconfirmed"] 
+
+.Úchopový bod s potvrzenou změnou hodnoty X pro rotaci
+image::2023-07-30T14-09-25-156Z.png[Úchopový bod s potvrzenou změnou hodnoty X pro rotaci,id="fig:grabPointsManagement.xRotChangeConfirmed"] 
+
+Velikost je vyjádřena pomocí hodnot X, Y a Z, které reprezentují třírozměrný vektor.
+Možné hodnoty pro tyto 3 vlastnosti se zde pohybují v rozsahu -100 až 100.
+
+Tato velikost je vždy vyjádřena ve stejném souřadnicovém systému jako pozice a rotace.
+
+.Úchopový bod se změněnou velikostí
+image::2023-07-30T14-09-52-508Z.png[Úchopový bod se změněnou velikostí,id="fig:grabPointsManagement.grabPointWithChangedScale"] 
+
+[NOTE]
+====
+Transformace provedené na daném úchopovém bodu jsou respektovány při pozdějším generování a vykreslování scén.
+Pokud však byl úchopový bod takto upraven po generaci scén, nebudou tyto změny propsány.
+====
