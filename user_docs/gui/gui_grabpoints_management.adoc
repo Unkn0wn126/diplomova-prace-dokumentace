@@ -19,7 +19,7 @@ image::2023-07-29T20-18-23-236Z.png[Seznam úchopových bodů,id="fig:grabPoints
 Proces vytvoření úchopového bodu je iniciován přesunutím kurzoru myši na zobrazovaný model.
 Tímto krokem se na modelu zobrazí náhled pozice a rotace úchopového bodu (<<fig:grabPointsManagement.grabPointPreview>>).
 
-Samotné vytvoření úchopového bodu proběhne stisknutím levého tlačítka myši btn:[LMB] na požadované pozici.
+Samotné vytvoření úchopového bodu proběhne stisknutím levého tlačítka myši kbd:[LMB] na požadované pozici.
 Úchopový bod je poté vytvořen jak ve scéně spravovaného modelu, tak v seznamu úchopových bodů vlevo (<<fig:grabPointsManagement.grabPointCreated>>).
 
 Počet úchopových bodů není omezen (<<fig:grabPointsManagement.multipleGrabPoints>>).
@@ -82,8 +82,8 @@ Ve výchozím nastavení zde tyto vlastnosti zobrazeny nejsou a pro jejich zobra
 image::2023-07-29T20-18-40-509Z.png[Panel s vlastnostmi vybraného úchopového bodu,id="fig:grabPointsManagement.transformInfoPanel"] 
 
 Po vybrání modelu se automaticky zobrazí aktuální pozice a rotace vybraného úchopového bodu (<<fig:grabPointsManagement.transformInfoPanelWithGrabPointInfo>>).
-Zobrazené hodnoty lze modifikovat najetím myši nad některou z nich, podržením levého tlačítka myši (btn:[LMB]) a tažením vlevo či vpravo pro snížení či zvýšení dané hodnoty.
-Dále je možné zadat do daného pole hodnotu přímo, avšak v tomto případě dojde k aktualizaci hodnot ve scéně až po stisku klávesy btn:[ENTER] či kliknutím levého tlačítka myši (btn:[LMB]) mimo dané pole.
+Zobrazené hodnoty lze modifikovat najetím myši nad některou z nich, podržením levého tlačítka myši (kbd:[LMB]) a tažením vlevo či vpravo pro snížení či zvýšení dané hodnoty.
+Dále je možné zadat do daného pole hodnotu přímo, avšak v tomto případě dojde k aktualizaci hodnot ve scéně až po stisku klávesy kbd:[ENTER] či kliknutím levého tlačítka myši (kbd:[LMB]) mimo dané pole.
 
 .Panel zobrazující vlastnosti úchopového bodu
 image::2023-07-30T14-04-50-981Z.png[Panel zobrazující vlastnosti úchopového bodu,id="fig:grabPointsManagement.transformInfoPanelWithGrabPointInfo"] 

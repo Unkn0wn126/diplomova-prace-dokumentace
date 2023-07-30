@@ -1,0 +1,30 @@
+extends: default
+page:
+  layout: portrait
+  margin: [25mm, 15mm, 25mm, 35mm]
+  margin-inner: 35mm
+  margin-outer: 15mm
+  size: A4
+base:
+  font-size: 12
+  line-height: 1.5
+  text-align: justify
+heading:
+  font-size: 17
+  font-style: bold
+image:
+  align: center
+  caption:
+    align: center
+footer:
+  font-size: 12
+  recto:
+    center:
+      content: '{page-number}'
+    right:
+      content:
+  verso:
+    center:
+      content: $footer-recto-center-content
+    left:
+      content:

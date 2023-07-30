@@ -14,10 +14,12 @@
 :xrefstyle: short
 :!chapter-signifier:
 :experimental:
+:hyphens: cs
+:pdf-theme: my-theme.yml
 
 :leveloffset: 0
 
 = Dokumentace aplikace na generování umělých datových sad
-:nofooter:
+:author: Bc. Lukáš Milar
 
 include::./user_docs/user_docs.adoc[leveloffset=+1]
