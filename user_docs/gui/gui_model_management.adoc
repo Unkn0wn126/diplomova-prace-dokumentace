@@ -23,24 +23,92 @@ Nelze tedy měnit pozici kamery snímající spravovaný model.
 Pro otáčení kamerou je nutné držet prostřední tlačítko myši (kbd:[MMB]) a táhnout myší v požadovaném směru.
 Přiblížení a oddálení je prováděno točením kolečka myši v požadovaném směru.
 Otáčení a změnu přiblížení lze iniciovat pouze pokud se kurzor myši nalézá v oblasti pohledu na scénu se spravovaným modelem (<<fig:modelManagement.managedModelView>>).
+Akce otáčení je však po započetí platná i po opuštění této oblasti až do okamžiku puštění prostředního tlačítka myši.
 
 .Pohled na scénu se spravovaným modelem
 image::2023-07-29T20-19-27-311Z.png[Pohled na scénu se spravovaným modelem,id="fig:modelManagement.managedModelView"] 
 
-.Sekce pro výběr modelu
-image::2023-07-29T20-18-06-983Z.png[Sekce pro výběr modelu,id="fig:modelManagement.selectModelSection"] 
-
-.Seznam úchopových bodů
-image::2023-07-29T20-18-23-236Z.png[Seznam úchopových bodů,id="fig:modelManagement.grabPointsListView"] 
-
-.Panel s vlastnostmi vybrané položky
-image::2023-07-29T20-18-40-509Z.png[Panel s vlastnostmi vybrané položky,id="fig:modelManagement.transformInfoPanel"] 
-
 [#sec:modelTransform]
 === Transformace modelu
 
+Na modelu lze provádět transformace otáčení a posunu.
+Změna velikosti není v této verzi podporována.
+Zároveň lze v aplikaci současně spravovat pouze jeden model.
+
+Transformace lze na modelu provádět pouze prostřednictvím panelu Vlastnosti v pravé straně obrazovky Model (<<fig:modelManagement.transformInfoPanel>>).
+Ve výchozím nastavení zde tyto vlastnosti zobrazeny nejsou a pro jejich zobrazení je nutné vybrat model ze seznamu Model v levé straně obrazovky (<<fig:modelManagement.selectModelSection>>).
+
+.Panel s vlastnostmi modelu
+image::2023-07-29T20-18-40-509Z.png[Panel s vlastnostmi modelu,id="fig:modelManagement.transformInfoPanel"] 
+
+.Sekce pro výběr modelu
+image::2023-07-29T20-18-06-983Z.png[Sekce pro výběr modelu,id="fig:modelManagement.selectModelSection"] 
+
+Po vybrání modelu se automaticky zobrazí aktuální pozice a rotace sledovaného modelu (<<fig:modelManagement.transformInfoPanelWithModelInfo>>).
+Zobrazené hodnoty lze modifikovat najetím myši nad některou z nich, podržením levého tlačítka myši (btn:[LMB]) a tažením vlevo či vpravo pro snížení či zvýšení dané hodnoty.
+Dále je možné zadat do daného pole hodnotu přímo, avšak v tomto případě dojde k aktualizaci hodnot ve scéně až po stisku klávesy btn:[ENTER] či kliknutím levého tlačítka myši (btn:[LMB]) mimo dané pole.
+
+.Panel zobrazující vlastnosti modelu
+image::2023-07-30T09-05-52-802Z.png[Panel zobrazující vlastnosti modelu,id="fig:modelManagement.transformInfoPanelWithModelInfo"] 
+
+Pozice je vyjádřena pomocí hodnot X, Y a Z, které reprezentují třírozměrný vektor.
+Možné hodnoty pro tyto 3 vlastnosti se zde pohybují v rozsahu -100 až 100.
+Tato pozice je vždy vyjádřena v globálním souřadnicovém systému (<<fig:modelManagement.modelWithTransformedPosition>>), a tudíž nejsou směry jednotlivých os ovlivněny aktuální rotací modelu (<<fig:modelManagement.modelWithTransformedPositionAndRotation>>).
+
+.Model se změněnou pozicí
+image::2023-07-30T09-17-12-333Z.png[Model se změněnou pozicí,id="fig:modelManagement.modelWithTransformedPosition"] 
+
+.Model se změněnou pozicí a rotací
+image::2023-07-30T09-18-46-291Z.png[Model se změněnou pozicí a rotací,id="fig:modelManagement.modelWithTransformedPositionAndRotation"] 
+
+Rotace je zde vyjádřena pomocí hodnoty X, Y, Z a W, které reprezentují Quaternion rotace.
+Aby byly zadávané hodnoty validní pro rotaci, pohybují se zde možné hodnoty v rozsahu -1 až 1.
+Zároveň jsou při změně jedné hodnoty příslušně aktualizované všechny ostatní, aby byla dodržena validita Quaternionu pro rotace (<<fig:modelManagement.xRotChangeUnconfirmed>>, <<fig:modelManagement.xRotChangeConfirmed>>).
+
+.Model se zadávanou změnou hodnoty X pro rotaci
+image::2023-07-30T09-19-57-231Z.png[Model se zadávanou změnou hodnoty X pro rotaci,id="fig:modelManagement.xRotChangeUnconfirmed"] 
+
+.Model s potvrzenou změnou hodnoty X pro rotaci
+image::2023-07-30T09-21-24-161Z.png[Model s potvrzenou změnou hodnoty X pro rotaci,id="fig:modelManagement.xRotChangeConfirmed"] 
+
 [#sec:loadModelFromFile]
 === Načtení modelu ze souboru
+
+Model lze načíst ze souboru typu JSON či ostatních podporovaných 3D formátů.
+// TODO sekce o podporovaných 3D formátech
+Pro obě možnosti jsou vyhrazeny rozdílné položky v nástrojové liště (viz <<sec:menuBar>>).
+
+Pro načtení modelu ze souboru JSON slouží položka menu:Import[Model z JSON], zatímco pro ostatní formáty slouží položka menu:Import[Model].
+V obou případech se zobrazí dialog pro otevření souboru (<<fig:modelManagement.importModelFromFileDialog>>, <<fig:modelManagement.importModelFromJsonFileDialog>>).
+
+.Dialog pro načtení modelu z 3D formátu
+image::2023-07-30T09-28-32-813Z.png[Dialog pro načtení modelu z 3D formátu,id="fig:modelManagement.importModelFromFileDialog"] 
+
+.Dialog pro načtení modelu ze souboru JSON
+image::2023-07-30T09-29-29-093Z.png[Dialog pro načtení modelu ze souboru JSON,id="fig:modelManagement.importModelFromJsonFileDialog"] 
+
+[WARNING]
+====
+Pro využití možnosti načtení modelu z podporovaného 3D formátu je nutné napřed navázat připojení k backendu.
+V opačném případě se zobrazí dialog s chybou informující o chybějícím připojení potřebném pro tuto akci (<<fig:modelManagement.importModelWithoutConnectionError>>).
+
+.Chyba při pokusu při pokusu o načtení modelu bez připojení k backendu
+image::2023-07-30T10-02-34-476Z.png[Chyba při pokusu při pokusu o načtení modelu bez připojení k backendu,id="fig:modelManagement.importModelWithoutConnectionError"] 
+====
+
+V případě pokusu o načtení nevalidního souboru se zobrazí dialogové okno s chybou (<<fig:modelManagement.importModelErrorDialog>>).
+
+.Dialog s chybou při načítání modelu
+image::2023-07-30T09-31-00-057Z.png[Dialog s chybou při načítání modelu,id="fig:modelManagement.importModelErrorDialog"] 
+
+Po úspěšném načtení modelu ze souboru (jak formátu JSON, tak ostatních formátů) je zobrazovaný model automaticky aktualizován.
+Pokud nebyla pro model definována některá z transformací, zobrazí se v konzoli varovná zpráva o její absenci (<<fig:modelManagement.modelImportedFromJsonWithMissingTransforms>>).
+Toto však nebrání dalšímu použití tohoto modelu, a tak se chybějící hodnoty pouze nastaví na výchozí.
+
+.Model načtený ze souboru JSON s chybějícími transformacemi
+image::2023-07-30T09-48-30-341Z.png[Model načtený ze souboru JSON s chybějícími transformacemi,id="fig:modelManagement.modelImportedFromJsonWithMissingTransforms"] 
+
+Tímto krokem je načtení modelu ze souboru dokončeno a lze s ním dále pracovat.
 
 [#sec:exportModelToJson]
 === Exportování modelu do JSON souboru

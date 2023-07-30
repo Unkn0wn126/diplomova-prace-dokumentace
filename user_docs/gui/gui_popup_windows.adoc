@@ -21,3 +21,10 @@ image::2023-07-29T17-31-18-480Z.png[Příklad okna s varovnou zprávou,id="fig:p
 
 .Příklad okna s chybovou zprávou
 image::2023-07-29T17-31-41-414Z.png[Příklad okna s chybovou zprávou,id="fig:popupWindows.errorPopupWindow"] 
+
+Pro správu souborů je používán UnitySimpleFileBrowser (<<fig:popupWindows.unitySimpleFileBrowser>>), který lze zavřít stisknutím tlačítka btn:[Cancel] pro zrušení akce či btn:[Otevřít], případně btn:[Uložit] pro otevření či uložení souboru.
+Více o používaných knihovnách viz sekce o používaných knihovnách.
+// sekce o používaných knihovnách
+
+.UnitySimpleFileBrowser
+image::2023-07-29T19-48-20-230Z.png[UnitySimpleFileBrowser,id="fig:popupWindows.unitySimpleFileBrowser"] 

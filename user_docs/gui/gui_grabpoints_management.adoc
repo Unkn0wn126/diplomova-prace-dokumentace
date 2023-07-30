@@ -2,3 +2,9 @@ ifndef::imagesdir[:imagesdir: ../../images]
 
 [#sec:grabPointsManagement]
 == Správa úchopových bodů
+
+.Seznam úchopových bodů
+image::2023-07-29T20-18-23-236Z.png[Seznam úchopových bodů,id="fig:grabPointsManagement.grabPointsListView"] 
+
+.Panel s vlastnostmi vybraného úchopového bodu
+image::2023-07-29T20-18-40-509Z.png[Panel s vlastnostmi vybraného úchopového bodu,id="fig:grabPointsManagement.transformInfoPanel"] 
