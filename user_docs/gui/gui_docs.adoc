@@ -27,18 +27,29 @@ Jakmile je aplikace spuštěna, zobrazí se výchozí obrazovka (<<fig:launchApp
 .Aplikace po otevření
 image::2023-07-29T12-43-51-075Z.png[Aplikace po otevření,id="fig:launchApp.openedApplication"] 
 
+<<<
 include::./gui_layout.adoc[]
 
+<<<
 include::./gui_project_management.adoc[]
 
+<<<
 include::./gui_backend_connection.adoc[]
 
+<<<
 include::./gui_model_management.adoc[]
 
+<<<
 include::./gui_grabpoints_management.adoc[]
 
+<<<
 include::./gui_scene_generation.adoc[]
 
+<<<
 include::./gui_scene_management.adoc[]
 
+<<<
+include::./gui_scene_rendering.adoc[]
+
+<<<
 include::./gui_example.adoc[]

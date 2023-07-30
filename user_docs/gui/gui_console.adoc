@@ -25,7 +25,11 @@ image::2023-07-29T15-42-14-173Z.png[Podopa konzole při malé velikosti okna,id=
 
 Při překročení velikosti konzole se v její pravé části automaticky zobrazí posouvátko umožňující posouvat se v záznamech k předešlým či pozdějším zprávám (<<fig:console.consoleWithManyMessages>>).
 Při vložení nové zprávy je navíc tento pohled automaticky posunut k nejnovější zprávě, která je vždy nejníže.
-Nutno upozornit, že konzole v sobě uchovává vždy posledních 20 zpráv a mezi jednotlivými typy v této verzi nelze filtrovat.
+
+[WARNING]
+====
+Konzole v sobě uchovává vždy posledních 20 zpráv a mezi jednotlivými typy v této verzi nelze filtrovat.
+====
 
 .Konzole s větším množstvím zpráv
 image::2023-07-29T15-51-39-037Z.png[Konzole s větším množstvím zpráv,id="fig:console.consoleWithManyMessages"] 

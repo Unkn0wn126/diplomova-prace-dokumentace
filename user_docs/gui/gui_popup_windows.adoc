@@ -6,7 +6,10 @@ ifndef::imagesdir[:imagesdir: ../../images]
 V aplikaci jsou vyskakovací okna využívána pro zobrazování zpráv uživateli či nastavení některých parametrů.
 Dokud je dané vyskakovací okno aktivní, nelze zpravidla interagovat se zbytkem aplikace.
 
-Vyskakovací okno je vyjma okna informujícího o probíhající operaci možné zavřít pomocí tlačítka křížku v jeho pravém horním rohu.
+[NOTE]
+====
+Vyskakovací okno je vyjma okna informujícího o probíhající operaci a oken pro správu souborů možné zavřít pomocí tlačítka křížku v jeho pravém horním rohu.
+====
 
 Vyskakovací okna se zprávou::
 

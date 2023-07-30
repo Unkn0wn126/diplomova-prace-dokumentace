@@ -3,7 +3,7 @@ ifndef::imagesdir[:imagesdir: ../../images]
 [#sec:modelManagement]
 == Správa modelu
 
-V této sekci jsou popsány nástroje pro správa zobrazovaného modelu.
+V této sekci jsou popsány nástroje pro správu zobrazovaného modelu.
 
 [#sec:modelScreen]
 === Obrazovka Model
@@ -71,6 +71,11 @@ image::2023-07-30T09-19-57-231Z.png[Model se zadávanou změnou hodnoty X pro ro
 .Model s potvrzenou změnou hodnoty X pro rotaci
 image::2023-07-30T09-21-24-161Z.png[Model s potvrzenou změnou hodnoty X pro rotaci,id="fig:modelManagement.xRotChangeConfirmed"] 
 
+[NOTE]
+====
+Ačkoliv nelze v aplikaci modifikovat velikost modelu, je tato informace uchovávána v souboru vytvářeném při uložení projektu či exportu modelu do souboru typu JSON.
+====
+
 [#sec:loadModelFromFile]
 === Načtení modelu ze souboru
 
@@ -112,3 +117,21 @@ Tímto krokem je načtení modelu ze souboru dokončeno a lze s ním dále praco
 
 [#sec:exportModelToJson]
 === Exportování modelu do JSON souboru
+
+Exportování modelu započne výběrem položky menu:Export[Model do JSON] z nástrojové lišty (viz <<sec:menuBar>>).
+Po výběru této položky se zobrazí dialog pro výběr souboru, do kterého se má model exportovat (<<fig:modelManagement.exportModelDialog>>).
+
+Je možné vybrat existující soubor typu JSON, či zadat příslušné jméno přímo.
+V případě, že v zadaném jméně nebude koncovka `.json`, bude do názvu automaticky doplněna.
+
+.Dialog pro výběr souboru, do kterého má být model uložen
+image::2023-07-30T11-17-41-774Z.png[Dialog pro výběr souboru, do kterého má být model uložen,,id="fig:modelManagement.exportModelDialog"] 
+
+[NOTE]
+====
+Do výsledného souboru se vyjma samotné geometrické sítě modelu ukládají také jeho pozice, rotace a velikost.
+====
+
+Provedením těchto kroků byl model úspěšně exportován.
+
+// TODO dialog o úspěšném exportu?
