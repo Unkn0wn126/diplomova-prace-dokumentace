@@ -52,14 +52,14 @@ Za shodné hodnoty se považuje i případ, kdy není ani jedno z polí vyplněn
 ====
 
 Jakmile jsou vyplněny parametry popsané výše, lze provést operaci vykreslení stiskem tlačítka btn:[Vykreslit] v dialogu (<<fig:sceneRendering.renderSettingsDialogFilled>>).
-V průběhu provádění akce vykreslení jsou do konzole průběžně vypisovány zprávy o postupu vykreslení scén (<<fig:sceneRendering.appAfterRenderFinished>>).
+V průběhu provádění akce vykreslení jsou do konzole průběžně vypisovány zprávy o postupu vykreslení scén a po jejím dokončení se zobrazí informační dialog (<<fig:sceneRendering.appAfterRenderFinished>>).
 Po dokončení operace zůstává dialog pro nastavení vykreslení otevřený a je potřeba jej zavřít ručně (viz <<sec:popupWindows>>).
 
 .Dialog pro vykreslení scén s vyplněnými hodnotami
 image::2023-07-31T12-49-58-441Z.png[Dialog pro vykreslení scén s vyplněnými hodnotami,id="fig:sceneRendering.renderSettingsDialogFilled"] 
 
 .Stav aplikace po dokončení vykreslení scén do párů snímků
-image::2023-07-31T12-52-32-032Z.png[Stav aplikace po dokončení vykreslení scén do párů snímků,id="fig:sceneRendering.appAfterRenderFinished"] 
+image::2023-07-31T23-10-51-419Z.png[Stav aplikace po dokončení vykreslení scén do párů snímků,id="fig:sceneRendering.appAfterRenderFinished"] 
 
 Výsledné snímky jsou vykreslovány do souborů typu PNG v rozlišení 1920x1920, 1920x1080 a 1920x1440 dle zvoleného poměru stran (viz <<sec:sceneGeneration>>).
 Pro jejich zobrazení je nutné navigovat v systému do příslušné složky (<<fig:sceneRendering.folderWithRenderResult>>).
