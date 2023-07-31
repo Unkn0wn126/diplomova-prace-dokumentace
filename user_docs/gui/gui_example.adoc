@@ -8,15 +8,17 @@ Celý proces je popsán po jednotlivých krocích tak, jak byly provedeny.
 
 :seq1: {counter:seq1}
 {seq1}. Otevřete aplikaci.
-Po otevření se zobrazí aplikace ve výchozím stavu.
+Po otevření se zobrazí aplikace ve výchozím stavu (<<fig:sampleUsage.defaultState>>).
 
-image::2023-07-31T13-54-12-112Z.png[] 
+.Výchozí stav aplikace
+image::2023-07-31T13-54-12-112Z.png[Výchozí stav aplikace,id="fig:sampleUsage.defaultState"] 
 
 :seq1: {counter:seq1}
 {seq1}. Klikněte na tlačítko btn:[Připojit se] ve stavové liště.
-Zobrazí se dialog pro připojení k backendu.
+Zobrazí se dialog pro připojení k backendu (<<fig:sampleUsage.connectToBackendDialog>>).
 
-image::2023-07-31T13-56-13-437Z.png[] 
+.Dialog pro připojení k backendu
+image::2023-07-31T13-56-13-437Z.png[Dialog pro připojení k backendu,id="fig:sampleUsage.connectToBackendDialog"] 
 
 :seq1: {counter:seq1}
 {seq1}. Pokud se chcete připojit k instanci backendu běžící lokálně, ujistěte se, že je tato instance spuštěna.
@@ -28,7 +30,7 @@ Pokud spuštěna není, stačí spustit ve složce `diplomova-prace-backend` př
 K provedení tohoto kroku je potřeba mít nainstalovaný nástroj https://docs.docker.com/engine/install/[Docker].
 ====
 
-// TODO příklad běžící instance
+// TODO příklad běžící instance?
 
 :seq1: {counter:seq1}
 {seq1}. Zadejte url a číslo portu pro připojení k backendu (při připojení k lokální instanci jsou tyto údaje již předvyplněny)
@@ -37,95 +39,113 @@ K provedení tohoto kroku je potřeba mít nainstalovaný nástroj https://docs.
 {seq1}. Klikněte na tlačítko btn:[Připojit se].
 Tímto krokem se uloží vyplněné hodnoty a provede se pokus o připojení k backendu.
 
-Pokud vše proběhlo v pořádku, zobrazí se dialog o úspěšném připojení a je možné používat rozšířenější funkce aplikace.
+Pokud vše proběhlo v pořádku, zobrazí se dialog o úspěšném připojení (<<fig:sampleUsage.backendConnectedDialog>>) a je možné používat rozšířenější funkce aplikace.
 
-image::2023-07-31T14-12-03-450Z.png[] 
+.Dialog informující o úspěšném připojení k backendu
+image::2023-07-31T14-12-03-450Z.png[Dialog informující o úspěšném připojení k backendu,id="fig:sampleUsage.backendConnectedDialog"] 
 
-V opačném případě se zobrazí chybové okno informující o neúspěšném připojení.
+V opačném případě se zobrazí chybové okno informující o neúspěšném připojení (<<fig:sampleUsage.backendConnectionFailedDialog>>).
 V takovém případě je potřeba prozkoumat validitu zadaných údajů a vyzkoušet připojení skrze jiné nástroje (např. https://blog.postman.com/postman-now-supports-socket-io/[Postman]).
 
-image::2023-07-31T14-10-01-629Z.png[] 
+.Dialog informující o chybě při pokusu o připojení k backendu
+image::2023-07-31T14-10-01-629Z.png[Dialog informující o chybě při pokusu o připojení k backendu,id="fig:sampleUsage.backendConnectionFailedDialog"] 
 
 :seq1: {counter:seq1}
-{seq1}. Klikněte na položku menu:Import[Model] v nástrojové liště a v zobrazeném dialogu vyberte požadovaný model pro načtení.
+{seq1}. Klikněte na položku menu:Import[Model] v nástrojové liště a v zobrazeném dialogu vyberte požadovaný model pro načtení (<<fig:sampleUsage.importModelFromFileDialog>>).
 
-image::2023-07-31T14-17-48-939Z.png[] 
+.Dialog pro výběr modelu, který se má nahrát
+image::2023-07-31T14-17-48-939Z.png[Dialog pro výběr modelu, který se má nahrát,id="fig:sampleUsage.importModelFromFileDialog"] 
 
-Ve scéně je nyní načtený zadaný model.
+Ve scéně je nyní načtený zadaný model (<<fig:sampleUsage.importedModel>>).
 
-image::2023-07-31T14-18-03-188Z.png[] 
+.Model po načtení ve scéně
+image::2023-07-31T14-18-03-188Z.png[Model po načtení ve scéně,id="fig:sampleUsage.importedModel"] 
 
 :seq1: {counter:seq1}
-{seq1}. Najeďte kurzorem myši na požadované části modelu a stiskem levého tlačítka (btn:[LMB]) vytvořte požadované úchopové body.
+{seq1}. Najeďte kurzorem myši na požadované části modelu a stiskem levého tlačítka (btn:[LMB]) vytvořte požadované úchopové body (<<fig:sampleUsage.modelWithGrabPoints>>).
 
-image::2023-07-31T14-18-45-121Z.png[] 
+.Model s vytvořenými úchopovými body
+image::2023-07-31T14-18-45-121Z.png[Model s vytvořenými úchopovými body,id="fig:sampleUsage.modelWithGrabPoints"] 
 
 :seq1: {counter:seq1}
 {seq1}. V nástrojové liště vyberte položku menu:Upravit[Definovat scény].
 
-Zobrazí se dialog pro definici scén.
+Zobrazí se dialog pro definici scén (<<fig:sampleUsage.sceneDefinitionDialog>>).
 
-image::2023-07-31T14-20-28-697Z.png[] 
-
-:seq1: {counter:seq1}
-{seq1}. Vyplňte parametry dle potřeby a stiskněte tlačítko btn:[Generovat].
-
-image:2023-07-31T14-21-23-542Z.png[] 
+.Dialog pro definici scén
+image::2023-07-31T14-20-28-697Z.png[Dialog pro definici scén,id="fig:sampleUsage.sceneDefinitionDialog"] 
 
 :seq1: {counter:seq1}
-{seq1}. Po dokončení generace scén se zobrazí dialog o dokončené operaci.
+{seq1}. Vyplňte parametry dle potřeby (<<fig:sampleUsage.sceneDefinitionDialogWithFilledParameters>>) a stiskněte tlačítko btn:[Generovat].
 
-image::2023-07-31T14-22-51-415Z.png[] 
-
-:seq1: {counter:seq1}
-{seq1}. Zavřete dialog pro definici scén a přepněte se na obrazovku Scény pomocí rozbalovací nabídky ve stavovém panelu.
-
-image::2023-07-31T14-23-41-777Z.png[] 
-
-image::2023-07-31T14-23-54-331Z.png[] 
+.Dialog pro definici scén s vyplněnými parametry
+image::2023-07-31T14-21-23-542Z.png[Dialog pro definici scén s vyplněnými parametry,id="fig:sampleUsage.sceneDefinitionDialogWithFilledParameters"] 
 
 :seq1: {counter:seq1}
-{seq1}. Pro náhled na vytvořené scény klikněte na některou z položek v seznamu vlevo.
+{seq1}. Po dokončení generace scén se zobrazí dialog o dokončené operaci (<<fig:sampleUsage.scenesGeneratedDialog>>).
 
-image::2023-07-31T14-24-39-743Z.png[] 
-
-:seq1: {counter:seq1}
-{seq1}. Klikněte na tlačítko btn:[Vykreslit] v horní části sekce náhledu scény a vyvolejte tím dialog pro nastavení vykreslení.
-
-image::2023-07-31T14-25-55-717Z.png[] 
+.Dialog se zprávou o dokončené generaci scén
+image::2023-07-31T14-22-51-415Z.png[Dialog se zprávou o dokončené generaci scén,id="fig:sampleUsage.scenesGeneratedDialog"] 
 
 :seq1: {counter:seq1}
-{seq1}. Zadejte složku pro uložení výstupu pomocí tlačítka btn:[Vybrat složku], nebo její cestu zadejte ručně do pole _Složka pro vykreslení_.
+{seq1}. Zavřete dialog pro definici scén a přepněte se na obrazovku Scény pomocí rozbalovací nabídky ve stavovém panelu (<<fig:sampleUsage.screenSelectComboBox>>, <<fig:sampleUsage.scenesScreen>>).
 
-image::2023-07-31T14-27-06-937Z.png[] 
+.Rozbalovací nabídka pro přepnutí aktivní obrazovky
+image::2023-07-31T14-23-41-777Z.png[Rozbalovací nabídka pro přepnutí aktivní obrazovky,id="fig:sampleUsage.screenSelectComboBox"] 
+
+.Obrazovka scén
+image::2023-07-31T14-23-54-331Z.png[Obrazovka scén,id="fig:sampleUsage.scenesScreen"] 
 
 :seq1: {counter:seq1}
-{seq1}. Zadejte předpony pro názvy snímků bez a s úchopovými body do polí _Název: základní_ a _Název: úchopové body_.
+{seq1}. Pro náhled na vytvořené scény klikněte na některou z položek v seznamu vlevo (<<fig:sampleUsage.selectedScenePreview>>).
 
-image::2023-07-31T14-28-24-557Z.png[] 
+.Zobrazený náhled vybrané scény
+image::2023-07-31T14-24-39-743Z.png[Zobrazený náhled vybrané scény,id="fig:sampleUsage.selectedScenePreview"] 
+
+:seq1: {counter:seq1}
+{seq1}. Klikněte na tlačítko btn:[Vykreslit] v horní části sekce náhledu scény a vyvolejte tím dialog pro nastavení vykreslení (<<fig:sampleUsage.renderSettingsDialog>>).
+
+.Dialog pro nastavení vykreslení scén
+image::2023-07-31T14-25-55-717Z.png[Dialog pro nastavení vykreslení scén,id="fig:sampleUsage.renderSettingsDialog"] 
+
+:seq1: {counter:seq1}
+{seq1}. Zadejte složku pro uložení výstupu pomocí tlačítka btn:[Vybrat složku], nebo její cestu zadejte ručně do pole _Složka pro vykreslení_ (<<fig:sampleUsage.renderSettingsDialogWithPathFilled>>).
+
+.Dialog po výběru složky k uložení výstupů vykreslení
+image::2023-07-31T14-27-06-937Z.png[Dialog po výběru složky k uložení výstupů vykreslení,id="fig:sampleUsage.renderSettingsDialogWithPathFilled"] 
+
+:seq1: {counter:seq1}
+{seq1}. Zadejte předpony pro názvy snímků bez a s úchopovými body do polí _Název: základní_ a _Název: úchopové body_ (<<fig:sampleUsage.renderSettingsDialogWithPrefixesFilled>>).
+
+.Dialog po doplnění předpon názvů pro snímky
+image::2023-07-31T14-28-24-557Z.png[Dialog po doplnění předpon názvů pro snímky,id="fig:sampleUsage.renderSettingsDialogWithPrefixesFilled"] 
 
 :seq1: {counter:seq1}
 {seq1}. Klikněte na tlačítko btn:[Vykreslit].
-Tímto krokem bude zahájeno vykreslení vytvořených scén do souborů dle specifikace.
+Tímto krokem bude zahájeno vykreslení vytvořených scén do souborů dle specifikace (<<fig:sampleUsage.applicationAfterRender>>).
 
-image::2023-07-31T14-35-56-420Z.png[] 
+.Stav aplikace po dokončení operace vykreslení scén
+image::2023-07-31T14-35-56-420Z.png[Stav aplikace po dokončení operace vykreslení scén,id="fig:sampleUsage.applicationAfterRender"] 
 
 :seq1: {counter:seq1}
-{seq1}. Jakmile je vykreslování dokončeno, můžete dialog zavřít a v systému navygovat do složky, kterou jste specifikovali v předešlých krocích.
+{seq1}. Jakmile je vykreslování dokončeno, můžete dialog zavřít a v systému navigovat do složky, kterou jste specifikovali v předešlých krocích (<<fig:sampleUsage.rendersInSystemExplorer>>).
 
-image::2023-07-31T14-37-15-512Z.png[] 
+.Vykreslené scény zobrazené v systémovém průzkumníku souborů
+image::2023-07-31T14-37-15-512Z.png[Vykreslené scény zobrazené v systémovém průzkumníku souborů,id="fig:sampleUsage.rendersInSystemExplorer"] 
 
 :seq1: {counter:seq1}
 {seq1}. Vytvořený projekt uložte kliknutím na položku v nástrojové liště menu:Soubor[Uložit (Ctrl + S)] či pomocí klávesové zkratky kbd:[Ctrl + S].
-Po uložení se zobrazí informační dialog.
+Po uložení se zobrazí informační dialog (<<fig:sampleUsage.projectSavedDialog>>).
 
-image::2023-07-31T14-39-25-366Z.png[] 
+.Informační dialog zobrazený po uložení projektu
+image::2023-07-31T14-39-25-366Z.png[Informační dialog zobrazený po uložení projektu,id="fig:sampleUsage.projectSavedDialog"] 
 
 :seq1: {counter:seq1}
 {seq1}. Odpojte se od backendu kliknutím na tlačítko btn:[Odpojit se] ve stavovém panelu.
-Po odpojení se zobrazí informační dialog s datumem a časem odpojení.
+Po odpojení se zobrazí informační dialog s datumem a časem odpojení (<<fig:sampleUsage.backendDisconnectedDialog>>).
 
-image::2023-07-31T14-42-02-044Z.png[] 
+.Informační dialog zobrazený po ukončení spojení s backendem
+image::2023-07-31T14-42-02-044Z.png[Informační dialog zobrazený po ukončení spojení s backendem,id="fig:sampleUsage.backendDisconnectedDialog"] 
 
 :seq1: {counter:seq1}
 {seq1}. Zavřete aplikaci.
