@@ -61,7 +61,7 @@ image::2023-07-31T12-49-58-441Z.png[Dialog pro vykreslení scén s vyplněnými 
 .Stav aplikace po dokončení vykreslení scén do párů snímků
 image::2023-07-31T12-52-32-032Z.png[Stav aplikace po dokončení vykreslení scén do párů snímků,id="fig:sceneRendering.appAfterRenderFinished"] 
 
-Výsledné snímky jsou vykreslovány do rozlišení 1920x1920, 1920x1080 a 1920*1440 v závislosti na zvoleném poměru stran (viz <<sec:sceneGeneration>>).
+Výsledné snímky jsou vykreslovány do souborů typu PNG v rozlišení 1920x1920, 1920x1080 a 1920x1440 dle zvoleného poměru stran (viz <<sec:sceneGeneration>>).
 Pro jejich zobrazení je nutné navigovat v systému do příslušné složky (<<fig:sceneRendering.folderWithRenderResult>>).
 Poté je možné s vytvořenými snímky satandardně pracovat a upravovat je.
 

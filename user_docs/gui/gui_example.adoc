@@ -2,3 +2,133 @@ ifndef::imagesdir[:imagesdir: ../../images]
 
 [#sec:sampleUsage]
 == Ukázkový scénář použití aplikace
+
+V této sekci je popsán ukázkový příklad použití této aplikace.
+Celý proces je popsán po jednotlivých krocích tak, jak byly provedeny.
+
+:seq1: {counter:seq1}
+{seq1}. Otevřete aplikaci.
+Po otevření se zobrazí aplikace ve výchozím stavu.
+
+image::2023-07-31T13-54-12-112Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. Klikněte na tlačítko btn:[Připojit se] ve stavové liště.
+Zobrazí se dialog pro připojení k backendu.
+
+image::2023-07-31T13-56-13-437Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. Pokud se chcete připojit k instanci backendu běžící lokálně, ujistěte se, že je tato instance spuštěna.
+
+Pokud spuštěna není, stačí spustit ve složce `diplomova-prace-backend` příkaz `docker-compose -f docker-compose.dev.yml up --build`.
+
+[WARNING]
+====
+K provedení tohoto kroku je potřeba mít nainstalovaný nástroj https://docs.docker.com/engine/install/[Docker].
+====
+
+// TODO příklad běžící instance
+
+:seq1: {counter:seq1}
+{seq1}. Zadejte url a číslo portu pro připojení k backendu (při připojení k lokální instanci jsou tyto údaje již předvyplněny)
+
+:seq1: {counter:seq1}
+{seq1}. Klikněte na tlačítko btn:[Připojit se].
+Tímto krokem se uloží vyplněné hodnoty a provede se pokus o připojení k backendu.
+
+Pokud vše proběhlo v pořádku, zobrazí se dialog o úspěšném připojení a je možné používat rozšířenější funkce aplikace.
+
+image::2023-07-31T14-12-03-450Z.png[] 
+
+V opačném případě se zobrazí chybové okno informující o neúspěšném připojení.
+V takovém případě je potřeba prozkoumat validitu zadaných údajů a vyzkoušet připojení skrze jiné nástroje (např. https://blog.postman.com/postman-now-supports-socket-io/[Postman]).
+
+image::2023-07-31T14-10-01-629Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. Klikněte na položku menu:Import[Model] v nástrojové liště a v zobrazeném dialogu vyberte požadovaný model pro načtení.
+
+image::2023-07-31T14-17-48-939Z.png[] 
+
+Ve scéně je nyní načtený zadaný model.
+
+image::2023-07-31T14-18-03-188Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. Najeďte kurzorem myši na požadované části modelu a stiskem levého tlačítka (btn:[LMB]) vytvořte požadované úchopové body.
+
+image::2023-07-31T14-18-45-121Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. V nástrojové liště vyberte položku menu:Upravit[Definovat scény].
+
+Zobrazí se dialog pro definici scén.
+
+image::2023-07-31T14-20-28-697Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. Vyplňte parametry dle potřeby a stiskněte tlačítko btn:[Generovat].
+
+image:2023-07-31T14-21-23-542Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. Po dokončení generace scén se zobrazí dialog o dokončené operaci.
+
+image::2023-07-31T14-22-51-415Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. Zavřete dialog pro definici scén a přepněte se na obrazovku Scény pomocí rozbalovací nabídky ve stavovém panelu.
+
+image::2023-07-31T14-23-41-777Z.png[] 
+
+image::2023-07-31T14-23-54-331Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. Pro náhled na vytvořené scény klikněte na některou z položek v seznamu vlevo.
+
+image::2023-07-31T14-24-39-743Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. Klikněte na tlačítko btn:[Vykreslit] v horní části sekce náhledu scény a vyvolejte tím dialog pro nastavení vykreslení.
+
+image::2023-07-31T14-25-55-717Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. Zadejte složku pro uložení výstupu pomocí tlačítka btn:[Vybrat složku], nebo její cestu zadejte ručně do pole _Složka pro vykreslení_.
+
+image::2023-07-31T14-27-06-937Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. Zadejte předpony pro názvy snímků bez a s úchopovými body do polí _Název: základní_ a _Název: úchopové body_.
+
+image::2023-07-31T14-28-24-557Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. Klikněte na tlačítko btn:[Vykreslit].
+Tímto krokem bude zahájeno vykreslení vytvořených scén do souborů dle specifikace.
+
+image::2023-07-31T14-35-56-420Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. Jakmile je vykreslování dokončeno, můžete dialog zavřít a v systému navygovat do složky, kterou jste specifikovali v předešlých krocích.
+
+image::2023-07-31T14-37-15-512Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. Vytvořený projekt uložte kliknutím na položku v nástrojové liště menu:Soubor[Uložit (Ctrl + S)] či pomocí klávesové zkratky kbd:[Ctrl + S].
+Po uložení se zobrazí informační dialog.
+
+image::2023-07-31T14-39-25-366Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. Odpojte se od backendu kliknutím na tlačítko btn:[Odpojit se] ve stavovém panelu.
+Po odpojení se zobrazí informační dialog s datumem a časem odpojení.
+
+image::2023-07-31T14-42-02-044Z.png[] 
+
+:seq1: {counter:seq1}
+{seq1}. Zavřete aplikaci.
+
+:seq1: {counter:seq1}
+{seq1}. Použijte vytvořenou datovou sadu dle potřeby.

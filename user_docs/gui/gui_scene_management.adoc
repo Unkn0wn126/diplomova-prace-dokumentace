@@ -15,6 +15,7 @@ image::2023-07-31T07-39-07-350Z.png[Obrazovka scény,id="fig:sceneManagement.sce
 ====
 
 Poměr stran náhledu scény se automaticky aktualizuje dle zvoleného poměru stran při generaci (<<fig:sceneManagement.scenePreviewUpdatedAspectRatio>>).
+Rozlišení náhledu scény je však vždy 800 pixelů.
 
 .Náhled scény s jiným poměrem stran
 image::2023-07-31T13-42-01-834Z.png[Náhled scény s jiným poměrem stran,id="fig:sceneManagement.scenePreviewUpdatedAspectRatio"] 
