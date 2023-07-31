@@ -2,3 +2,76 @@ ifndef::imagesdir[:imagesdir: ../../images]
 
 [#sec:sceneRendering]
 == Vykreslení scén
+
+Proces vykreslení scén do párů snímků započne kliknutím na tlačítko btn:[Vykreslit] (<<fig:sceneRendering.renderButtonInSceneView>>).
+Po stisknutí tohoto tlačítka se zobrazí vyskakovací dialog Nastavení vykreslení (<<fig:sceneRendering.renderSettings>>), se kterým lze pohybovat a měnit jeho velikost (viz <<sec:popupWindows>>).
+
+.Tlačítko vykreslit v obrazovce Scény
+image::2023-07-31T09-01-30-446Z.png[Tlačítko vykreslit v obrazovce Scény,id="fig:sceneRendering.renderButtonInSceneView"] 
+
+.Dialog Nastavení vykreslení
+image::2023-07-31T09-02-54-103Z.png[Dialog Nastavení vykreslení,id="fig:sceneRendering.renderSettings"] 
+
+Nejprve je potřeba zadat složku, do které mají být páry snímků vykresleny.
+Toto lze provést buďto přímým zadáním této cesty do pole _Složka pro vykreslení_ (<<fig:sceneRendering.renderPathField>>) či kliknutím na tlačítko btn:[Vybrat složku] (<<fig:sceneRendering.selectRenderPathButton>>).
+
+.Pole Složka pro vykreslení
+image::2023-07-31T09-09-29-441Z.png[Pole Složka pro vykreslení,id="fig:sceneRendering.renderPathField"] 
+
+.Tlačítko Vybrat složku
+image::2023-07-31T09-11-00-162Z.png[Tlačítko Vybrat složku,id="fig:sceneRendering.selectRenderPathButton"] 
+
+V případě zvolení druhé možnosti se zobrazí dialog pro výběr složky, do které mají být snímky vykresleny (<<fig:sceneRendering.selectRenderPathDialog>>).
+Pro potvrzení výběru poté stačí stisknout tlačítko btn:[Otevřít].
+Cesta k vybrané složce se poté zobrazí v příslušném poli (<<fig:sceneRendering.renderSettingsDialogWithRenderPathSelected>>).
+
+.Dialog pro výběr složky pro vykreslení
+image::2023-07-31T09-11-49-533Z.png[Dialog pro výběr složky pro vykreslení,id="fig:sceneRendering.selectRenderPathDialog"] 
+
+.Dialog po výběru složky pro vykreslení
+image::2023-07-31T09-13-37-795Z.png[Dialog po výběru složky pro vykreslení,id="fig:sceneRendering.renderSettingsDialogWithRenderPathSelected"] 
+
+[NOTE]
+====
+Při stisku tlačítka btn:[Vykreslit] v dialogu Nastavení vykreslení bez nastavené výstupové cesty nedojde k vykreslení snímků a zobrazí se vyskakovací okno s informací, že potřebná cesta není vyplněna (<<fig:sceneRendering.renderPathNotSetDialog>>).
+
+.Výsledek při pokusu o vykreslení bez zadané cesty
+image::2023-07-31T09-05-34-051Z.png[Výsledek při pokusu o vykreslení bez zadané cesty,id="fig:sceneRendering.renderPathNotSetDialog"] 
+====
+
+Poté je potřeba zadat předponu pro název snímků bez a s úchopovými body.
+Předpona snímků bez úchopových bodů není přidávána k předponě pro snímky s úchopovými body, a tak je vyžadováno, aby se tyto hodnoty neshodovaly.
+Pokud dojde k pokusu o vykreslení se shodnými hodnotami v obou těchto polích, zobrazí se varovná zpráva (<<fig:sceneRendering.prefixCannotMatchWarningDialog>>).
+
+.Dialog s varovnou zprávou o stejných předponách souborů
+image::2023-07-31T12-47-31-989Z.png[Dialog s varovnou zprávou o stejných předponách souborů,id="fig:sceneRendering.prefixCannotMatchWarningDialog"] 
+
+[NOTE]
+====
+Za shodné hodnoty se považuje i případ, kdy není ani jedno z polí vyplněno.
+====
+
+Jakmile jsou vyplněny parametry popsané výše, lze provést operaci vykreslení stiskem tlačítka btn:[Vykreslit] v dialogu (<<fig:sceneRendering.renderSettingsDialogFilled>>).
+V průběhu provádění akce vykreslení jsou do konzole průběžně vypisovány zprávy o postupu vykreslení scén (<<fig:sceneRendering.appAfterRenderFinished>>).
+Po dokončení operace zůstává dialog pro nastavení vykreslení otevřený a je potřeba jej zavřít ručně (viz <<sec:popupWindows>>).
+
+.Dialog pro vykreslení scén s vyplněnými hodnotami
+image::2023-07-31T12-49-58-441Z.png[Dialog pro vykreslení scén s vyplněnými hodnotami,id="fig:sceneRendering.renderSettingsDialogFilled"] 
+
+.Stav aplikace po dokončení vykreslení scén do párů snímků
+image::2023-07-31T12-52-32-032Z.png[Stav aplikace po dokončení vykreslení scén do párů snímků,id="fig:sceneRendering.appAfterRenderFinished"] 
+
+Výsledné snímky jsou vykreslovány do rozlišení 1920x1920, 1920x1080 a 1920*1440 v závislosti na zvoleném poměru stran (viz <<sec:sceneGeneration>>).
+Pro jejich zobrazení je nutné navigovat v systému do příslušné složky (<<fig:sceneRendering.folderWithRenderResult>>).
+Poté je možné s vytvořenými snímky satandardně pracovat a upravovat je.
+
+.Složka s vykreslenými páry snímků
+image::2023-07-31T12-57-30-869Z.png[Složka s vykreslenými páry snímků,id="fig:sceneRendering.folderWithRenderResult"] 
+
+Příklad možného výsledku z vykreslení scén je zobrazen na následujících obrázcích: <<fig:sceneRendering.renderResultWithoutGrabPoints>> a <<fig:sceneRendering.renderResultWithGrabPoints>>.
+
+.Snímek bez úchopových bodů
+image::test3.png[Snímek bez úchopových bodů,id="fig:sceneRendering.renderResultWithoutGrabPoints"] 
+
+.Snímek s úchopovými body
+image::test_gp3.png[Snímek s úchopovými body,id="fig:sceneRendering.renderResultWithGrabPoints"] 

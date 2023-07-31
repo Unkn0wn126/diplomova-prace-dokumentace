@@ -16,6 +16,10 @@ image:
   align: center
   caption:
     align: center
+table:
+  caption:
+    align: center
+    end: bottom
 footer:
   font-size: 12
   recto:

@@ -9,6 +9,7 @@ Dokud je dané vyskakovací okno aktivní, nelze zpravidla interagovat se zbytke
 [NOTE]
 ====
 Vyskakovací okno je vyjma okna informujícího o probíhající operaci a oken pro správu souborů možné zavřít pomocí tlačítka křížku v jeho pravém horním rohu.
+Tato okna lze také přesouvat za držením levého tlačítka myši (kbd:[LMB]) na horní části daného okna a tažením v příslušném směru.
 ====
 
 Vyskakovací okna se zprávou::
@@ -24,6 +25,15 @@ image::2023-07-29T17-31-18-480Z.png[Příklad okna s varovnou zprávou,id="fig:p
 
 .Příklad okna s chybovou zprávou
 image::2023-07-29T17-31-41-414Z.png[Příklad okna s chybovou zprávou,id="fig:popupWindows.errorPopupWindow"] 
+
+[NOTE]
+====
+
+Oknům, která mají vyznačenou ikonku (<<fig:popupWindows.resizablePopupWindow>>) v pravém dolním rohu lze měnit jejich velikost držením levého tlačítka myši (kbd:[LMB]) a tažením v příslušném směru poté, co byl na tuto ikonku přesunut kurzor myši.
+
+.Vyskakovací okno umožňující změnu velikosti
+image::2023-07-30T17-02-08-522Z.png[Vyskakovací okno umožňující změnu velikosti,id="fig:popupWindows.resizablePopupWindow"] 
+====
 
 Pro správu souborů je používán UnitySimpleFileBrowser (<<fig:popupWindows.unitySimpleFileBrowser>>), který lze zavřít stisknutím tlačítka btn:[Cancel] pro zrušení akce či btn:[Otevřít], případně btn:[Uložit] pro otevření či uložení souboru.
 Více o používaných knihovnách viz sekce o používaných knihovnách.

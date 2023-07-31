@@ -36,9 +36,15 @@ image::2023-07-30T13-36-10-114Z.png[Vícero úchopových bodů,id="fig:grabPoint
 
 Úchopové body lze smazat stisknutím tlačítka křížku (btn:[X]) v levé části položky v seznamu úchopových bodů.
 Po smazání z tohoto seznamu je automaticky aktualizován také stav ve scéně se spravovaným modelem (<<fig:grabPointsManagement.grabPointsAfterDeletion>>).
+Není zde napřed vyžadováno potvrzení uživatelem.
 
 .Úchopové body po smazání
 image::2023-07-30T13-39-39-975Z.png[Úchopové body po smazání,id="fig:grabPointsManagement.grabPointsAfterDeletion"] 
+
+[CAUTION]
+====
+Akce smazání úchopového bodu nelze zvrátit, je proto doporučeno před touto akcí provést uložení projektu.
+====
 
 [NOTE]
 ====

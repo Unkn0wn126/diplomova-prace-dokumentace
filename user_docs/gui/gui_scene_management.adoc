@@ -2,3 +2,150 @@ ifndef::imagesdir[:imagesdir: ../../images]
 
 [#sec:sceneManagement]
 == Správa scén
+
+V této sekci je popsána základní práce se scénami jako je například jejich výběr a mazání.
+
+Obrazovka scén (<<fig:sceneManagement.scenesScreen>>) je rozdělena do tří sekcí a umožňuje zobrazit a mazat scény.
+Dále umožňuje tyto scény vykreslit.
+
+.Obrazovka scény
+image::2023-07-31T07-39-07-350Z.png[Obrazovka scény,id="fig:sceneManagement.scenesScreen"] 
+
+[NOTE]
+====
+
+Poměr stran náhledu scény se automaticky aktualizuje dle zvoleného poměru stran při generaci (<<fig:sceneManagement.scenePreviewUpdatedAspectRatio>>).
+
+.Náhled scény s jiným poměrem stran
+image::2023-07-31T13-42-01-834Z.png[Náhled scény s jiným poměrem stran,id="fig:sceneManagement.scenePreviewUpdatedAspectRatio"] 
+====
+
+[#sec:selectScenes]
+=== Výběr scén
+
+Na levé straně se nachází sekce Vygenerované scény, kde je zobrazen seznam vygenerovaných scén (<<fig:sceneManagement.sceneListView>>).
+
+.Seznam vygenerovaných scén
+image::2023-07-31T07-42-12-756Z.png[Seznam vygenerovaných scén,id="fig:sceneManagement.sceneListView"] 
+
+Obsah scény, která je v danou chvíli aktivní se zobrazí v náhledu scény (<<fig:sceneManagement.scenePreview>>) v prostřední sekci této obrazovky.
+Tato sekce dále obsahuje další ovládací prvky pro další práci s vybranou scénou (<<fig:sceneManagement.activeSceneButtonsPanel>>).
+Bližší informace jako velikost zájmové oblasti či počet objektů se zobrazí v panelu detailu scény (<<fig:sceneManagement.sceneDetailPanel>>).
+
+.Sekce s náhledem vykreslené scény
+image::2023-07-31T07-43-12-517Z.png[Sekce s náhledem vykreslené scény,id="fig:sceneManagement.scenePreview"] 
+
+.Panel tlačítek v sekci zobrazované scény
+image::2023-07-31T07-43-20-002Z.png[Panel tlačítek v sekci zobrazované scény,id="fig:sceneManagement.activeSceneButtonsPanel"] 
+
+.Panel detailu scény
+image::2023-07-31T07-43-30-847Z.png[Panel detailu scény,id="fig:sceneManagement.sceneDetailPanel"] 
+
+Ve výchozím stavu (<<fig:sceneManagement.sceneScreenWithScenesGenerated>>) není po přepnutí na tuto obrazovku žádná scéna vybrána jako aktivní, a to nezávisle na tom zda již předtím některá vybrána byla.
+Pro výběr dané scény je potřeba přesunout kurzor myši na požadovanou položku v seznamu scén v levé sekci této obrazovky a poklepat na ni levým tlačítkem myši (kbd:[LMB]).
+
+Po výběru dané scény se příslušná položka v seznamu zbarví a automaticky se zobrazí její obsah v náhledu scény a v detailu scény (<<fig:sceneManagement.sceneScreenWithSceneSelected>>).
+Vždy lze vybrat pouze jednu scénu a výběr jiné scény způsobí zrušení výběru scény předešlé.
+
+.Obrazovka scén s vygenerovanými scénami
+image::2023-07-31T08-09-24-871Z.png[Obrazovka scén s vygenerovanými scénami,id="fig:sceneManagement.sceneScreenWithScenesGenerated"] 
+
+.Obrazovka scén s vybranou scénou
+image::2023-07-31T08-12-14-375Z.png[Obrazovka scén s vybranou scénou,id="fig:sceneManagement.sceneScreenWithSceneSelected"] 
+
+[#sed:deleteScenes]
+=== Mazání scén
+
+Scény lze mazat stisknutím tlačítka btn:[X] (<<fig:sceneManagement.deleteSceneButton>>) v levé straně dané položky v seznamu scén.
+Po kliknutí na toto tlačítko je scéna okamžitě smazána a seznam aktualizován (<<fig:sceneManagement.sceneViewAfterDeletion>>).
+Není zde tudíž napřed vyžadováno potvrzení uživatelem.
+
+.Tlačítka pro smazání scény
+image::2023-07-31T08-27-13-964Z.png[Tlačítka pro smazání scény,id="fig:sceneManagement.deleteSceneButton"] 
+
+.Seznam scén po smazání scény
+image::2023-07-31T08-28-02-789Z.png[Seznam scén po smazání scény,id="fig:sceneManagement.sceneViewAfterDeletion"] 
+
+[NOTE]
+====
+Smazání scény, která je v danou chvíli vybrána způsobí zrušení výběru scény.
+Nedojde tak k výběru další scény v seznamu.
+====
+
+[CAUTION]
+====
+Akce smazání scény nelze zvrátit, je proto doporučeno před touto akcí provést uložení projektu.
+====
+
+[#sec:sceneManipulation]
+=== Manipulace se scénou
+
+Zobrazený náhled scény lze přiblížit držením klávesy kbd:[LCTRL] a posouváním kolečka myši když je kurzor myši nad tímto náhledem (<<fig:sceneManagement.scenePreviewZoomed>>).
+Přiblížení lze vyresetovat stisknutím tlačítka btn:[Resetovat přiblížení] (<<fig:sceneManagement.resetZoomButton>>).
+
+.Přiblížený náhled scény
+image::2023-07-31T08-15-58-940Z.png[Přiblížený náhled scény,id="fig:sceneManagement.scenePreviewZoomed"] 
+
+.Tlačítko Resetovat přiblížení
+image::2023-07-31T08-17-44-045Z.png[Tlačítko Resetovat přiblížení,id="fig:sceneManagement.resetZoomButton"] 
+
+V rámci náhledu lze zobrazit scénu jak s úchopovými body, tak bez nich.
+Ve výchozím stavu se scéna zobrazuje i s úchopovými body, které lze v náhledu skrýt kliknutím levého tlačítka myši (kbd:[LMB]) na zaškrtávací pole Zobrazit úchopové body (<<fig:sceneManagement.displayGrabPointsCheckBox>>).
+
+.Zaškrtávací pole Zobrazit úchopové body
+image::2023-07-31T08-21-33-181Z.png[Zaškrtávací pole Zobrazit úchopové body,id="fig:sceneManagement.displayGrabPointsCheckBox"] 
+
+Pole nacházející se v panelu detailu scény jsou popsána v následující tabulce.
+
+.Pole v panelu detailu scény
+[cols=3, options="header",id="tab:sceneManagement.sceneDetailTableFields",options=unbreakable]
+|===
+
+|Název pole
+|Význam
+|Je editovatelné
+
+|Název
+|Název scény
+|Ne
+
+|Šířka
+|Šířka zájmové oblasti scény
+|Ne
+
+|Výška
+|Výška zájmové oblasti scény
+|Ne
+
+|Počet objektů
+|Počet objektů zobrazených ve scéně
+|Ne
+
+|Počet úchopových bodů
+|Celkový počet úchopových bodů zobrazených ve scéně
+|Ne
+
+|Pozice kamery X:
+|Pozice kamery na ose X
+|Ano
+
+|Pozice kamery Y:
+|Pozice kamery na ose Y
+|Ano
+
+|Pozice kamery Z:
+|Pozice kamery na ose Z
+|Ano
+
+|===
+
+Jak je z předešlé tabulky zřejmé, je možné manipulovat s pozicí kamery dané scény.
+Tuto akci lze provést standardně zadáním hodnoty do příslušného pole či tažením myší za držení levého tlačítka myši (kbd:[LMB]) po najetí na dané pole.
+
+Náhled scény se automaticky aktualizuje po změně hodnoty daného pole (<<fig:sceneManagement.scenePreviewBeforeCameraTransform>>, <<fig:sceneManagement.scenePreviewAfterCameraTransform>>).
+
+.Náhled scény před změnou pozice kamery
+image::2023-07-31T08-49-45-753Z.png[Náhled scény před změnou pozice kamery,id="fig:sceneManagement.scenePreviewBeforeCameraTransform"] 
+
+.Náhled scény po změně pozice kamery
+image::2023-07-31T08-50-06-730Z.png[Náhled scény po změně pozice kamery,id="fig:sceneManagement.scenePreviewAfterCameraTransform"] 

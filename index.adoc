@@ -1,5 +1,6 @@
 :docinfo: shared
 :doctype: book
+:lang: cs
 :toc: left
 :toc-title: Obsah
 :toclevels: 3
@@ -9,8 +10,8 @@
 :icons: font
 :encoding: UTF-8
 :figure-caption: Obrázek
-:figure-refsig: Obr.
 :section-refsig: Kap.
+:table-caption: Tabulka
 :xrefstyle: short
 :!chapter-signifier:
 :experimental:

@@ -2,3 +2,81 @@ ifndef::imagesdir[:imagesdir: ../../images]
 
 [#sec:sceneGeneration]
 == Generace scén
+
+Před samotnou generací scén je potřeba zadat příslušné parametry.
+Tento proces započne vybráním položky menu:Upravit[Definovat scény] v nástrojové liště (viz <<sec:menuBar>>).
+
+Po kliknutí na tuto položku se zobrazí dialogové okno (<<fig:sceneGeneration.sceneDefinitionDialog>>) umožňující zadat příslušné parametry, uložit zvolené parametry (btn:[Uložit]), vygenerovat scény dle těchto parametrů (btn:[Generovat]) a vyresetovat provedené úpravy (btn:[Reset]).
+
+.Dialog pro definici parametrů pro generaci scén
+image::2023-07-30T16-57-35-432Z.png[Dialog pro definici parametrů pro generaci scén,id="fig:sceneGeneration.sceneDefinitionDialog"] 
+
+Dialog lze v případě potřeby zvětšit (viz <<sec:popupWindows>>).
+Pro podobu celého obsahu dialogu viz <<fig:sceneGeneration.sceneDefinitionDialogEnlarged>>.
+
+.Zvětšený dialog pro definici parametrů pro generaci scén
+image::2023-07-30T17-07-32-503Z.png[Zvětšený dialog pro definici parametrů pro generaci scén,id="fig:sceneGeneration.sceneDefinitionDialogEnlarged"] 
+
+[NOTE]
+====
+U číselných polí lze měnit jejich hodnotu jak přímým zadáním z klávesnice, tak pomocí držení levého tlačítka myši (kbd:[LMB]) a tažením vlevo či vpravo pro snížení či zvýšení dané hodnoty.
+====
+
+Jednotlivá pole jsou popsána v následující tabulce včetně významu a možných hodnot.
+
+.Pole v dialogu pro definici parametrů pro generaci scén
+[cols=3, options="header",id="tab:sceneGeneration.sceneGenerationTableFields",options=unbreakable]
+|===
+
+|Název pole
+|Význam
+|Možné hodnoty
+
+|Název scén
+|Část názvu, kterou budou mít všechny scény společné (druhá část se skládá je číslo pořadí od 0)
+|Libovolný textový řetězec
+
+|Poměr stran
+|Poměr stran zájmové oblasti
+|1:1, 16:9, 4:3
+
+|Šířka zájmové oblasti
+|Šířka zájmové oblasti v metrech
+|V závislosti na poměru stran minimálně 1\|16\|4 * velikost zkoumaného modelu
+
+|Výška zájmové oblasti
+|Výška zájmové oblasti v metrech
+|V závislosti na poměru stran minimálně 1\|16/9\|4/3 * šířka
+
+|Počet vrstev na výšku
+|Kolik zkoumaných modelů by mělo být možné postavit nad sebe
+|Číslo v rozsahu 1–10
+
+|Počet objektů
+|Kolikrát se má model ve vygenerované scéně objevit
+|Číslo v rozsahu od 10 do množství modelů, které se vejdou do objemu složeného z velikosti zájmové oblasti a počtu vrstev na výšku
+
+|Počet scén
+|Kolik scén má být vygenerováno
+|Číslo v rozsahu 1–500
+
+|Použít simulaci
+|Zda má být při generaci použita simulace (výpočetně a časově náročnější)
+|Zaškrtnuto/nezaškrtnuto
+
+|Algoritmus pro generaci
+|Jaký algoritmus má být použit pro generování náhodných pozic a rotací pro sledované modely
+|Random\|PoissonDisc
+
+|===
+
+[NOTE]
+====
+Hodnoty polí, u nichž minimální či maximální hodnoty závisejí na hodnotách jiných polí jsou automaticky aktualizovány pokud dojde k posunutí daných hranic a stávající hodnota těmto hranicím nevyhovuje.
+====
+
+Jakmile je operace generace scén hotová, zobrazí se dialog s touto informací (<<fig:sceneGeneration.scenesGeneratedDialog>>).
+Pro další práci s vygenerovanými scénami je potřeba se přepnout do obrazovky Scény (viz <<sec:switchScreens>>).
+
+.Dialog po úspěšném vygenerování scén
+image::2023-07-30T17-50-25-906Z.png[Dialog po úspěšném vygenerování scén,id="fig:sceneGeneration.scenesGeneratedDialog"] 
