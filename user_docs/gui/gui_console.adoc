@@ -20,8 +20,8 @@ Její velikost se však automaticky přizpůsobí rozměrům okna (<<fig:console
 .Podoba konzole při normální velikosti okna
 image::2023-07-29T15-23-48-952Z.png[Podoba konzole při normální velikosti okna,id="fig:console.consoleNormalWindow"] 
 
-.Podopa konzole při malé velikosti okna
-image::2023-07-29T15-42-14-173Z.png[Podopa konzole při malé velikosti okna,id="fig:console.consoleSmallWindow"] 
+.Podoba konzole při malé velikosti okna
+image::2023-07-29T15-42-14-173Z.png[Podoba konzole při malé velikosti okna,id="fig:console.consoleSmallWindow"] 
 
 Při překročení velikosti konzole se v její pravé části automaticky zobrazí posouvátko umožňující posouvat se v záznamech k předešlým či pozdějším zprávám (<<fig:console.consoleWithManyMessages>>).
 Při vložení nové zprávy je navíc tento pohled automaticky posunut k nejnovější zprávě, která je vždy nejníže.
