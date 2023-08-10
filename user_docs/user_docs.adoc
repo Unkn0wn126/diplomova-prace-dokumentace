@@ -1,1 +1,4 @@
 include::./gui/gui_docs.adoc[]
+
+<<<
+include::./backend/backend_docs.adoc[]

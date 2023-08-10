@@ -1,0 +1,7 @@
+ifndef::imagesdir[:imagesdir: ../../images]
+
+
+= Uživatelská příručka backendu aplikace
+
+
+V této sekci je popsán způsob práce s backendem aplikace pro koncového uživatele.
