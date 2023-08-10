@@ -1,0 +1,7 @@
+ifndef::imagesdir[:imagesdir: ../../images]
+
+
+= Technická dokumentace backendu
+
+
+V této sekci se nachází technická dokumentace backendu aplikace.

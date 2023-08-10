@@ -1,0 +1,7 @@
+ifndef::imagesdir[:imagesdir: ../../images]
+
+
+= Technická dokumentace grafického rozhraní
+
+
+V této sekci se nachází technická dokumentace grafické části aplikace vytvořené v Unity.

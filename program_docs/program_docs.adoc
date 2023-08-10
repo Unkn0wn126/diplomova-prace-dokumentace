@@ -1,0 +1,4 @@
+include::./backend/backend_program_docs.adoc[]
+
+<<<
+include::./gui/gui_program_docs.adoc[]

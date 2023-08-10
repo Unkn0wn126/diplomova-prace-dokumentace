@@ -24,3 +24,6 @@
 :author: Bc. Lukáš Milar
 
 include::./user_docs/user_docs.adoc[leveloffset=+1]
+
+<<<
+include::./program_docs/program_docs.adoc[leveloffset=+1]
