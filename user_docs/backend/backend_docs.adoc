@@ -5,3 +5,18 @@ ifndef::imagesdir[:imagesdir: ../../images]
 
 
 V této sekci je popsán způsob práce s backendem aplikace pro koncového uživatele.
+
+[#sec:launchBackend]
+== Spuštění backendu
+
+Backend lze spustit tradičním způsobem lokálně či pomocí Dockeru.
+V prvním případě je potřeba zajistit instanci RabbitMQ a případně poupravit nastavení v application.yml pro projekt ve Springu a soubor .env pro projekt v Pythonu.
+// TODO popis .env nastavení pro Python v technické dokumentaci?
+Ve druhém případě stačí navigovat příkazovým řádkem to složky se souborem docker-compose.dev.yml a zadat příkaz `docker-compose -f docker-compose.dev.yml up –build`.
+Po spuštění tohoto příkazu by měl být backend připraven k použití.
+
+[WARN]
+====
+Před spuštěním příkazu popsaného výše zkontrolujte, že má soubor mvnw v projektu ve Springu nastaven konce řádků na hodnotu LF.
+V opačném případě nemusí být tento soubor nalezen a proces sestavení této části tak může selhat
+====

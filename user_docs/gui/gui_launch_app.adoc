@@ -5,15 +5,20 @@ ifndef::imagesdir[:imagesdir: ../../images]
 
 Windows::
 
-Aplikaci je potřeba spustit pomocí souboru "DiplomovaPraceFrontend.exe" (<<fig:launchApp.windowsExeFile>>).
+Aplikaci je potřeba spustit pomocí souboru "DiplomovaPraceFrontend.exe" ve složce diplomovaPraceFrontend_windows (<<fig:launchApp.windowsExeFile>>).
 
 .Soubor DiplomovaPraceFrontend.exe
 image::2023-07-29T12-20-25-722Z.png[Soubor DiplomovaPraceFrontend.exe,id="fig:launchApp.windowsExeFile"] 
 
 Linux::
 
-Aplikaci je potřeba spustit pomocí souboru "..."
-// TODO
+Aplikaci je potřeba spustit pomocí souboru "diplomovaPraceFrontend_linux.x86_64" ve složce diplomovaPraceFrontendLinux (<<fig:launchApp.linuxLaunchFile>>).
+
+.Soubor diplomovaPraceFrontend_linux.x86_64
+image::2023-08-14T16-39-48-274Z.png[Soubor diplomovaPraceFrontend_linux.x86_64,id="fig:launchApp.linuxLaunchFile"] 
+
+Před spuštěním je možné, že bude potřeba přidat právo pro vykonávání.
+Toto lze provést příkazem `chmod +x ./diplomovaPraceFrontend_linux.x86_64` ve složce s tímto souborem.
 
 
 Jakmile je aplikace spuštěna, zobrazí se výchozí obrazovka (<<fig:launchApp.openedApplication>>).
