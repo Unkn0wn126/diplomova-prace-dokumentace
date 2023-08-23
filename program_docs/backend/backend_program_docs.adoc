@@ -160,7 +160,7 @@ Při jeho tvorbě byla vynaložena snaha jej zdokumentovat již samotnou struktu
 Tento projekt používá pro nastavení aplikace soubor application.yml.
 V tomto souboru jsou umístěny atributy umožňující pozměnit chování aplikace.
 Jejich hodnoty lze přepsat při spuštění v Dockeru v souboru `docker-compose.dev.yml`.
-Tyto atributy jsou vyobrazeny na následující tabulce (tečka ve vyobrazení indikuje hierarchii).
+Atributy vytvořené specificky pro tento projekt jsou vyobrazeny na následující tabulce (tečka ve vyobrazení indikuje hierarchii).
 
 .Atributy souboru application.yml
 [cols=3, options="header",id="tab:attributesInApplicationYml.attributes",options=unbreakable]
@@ -185,6 +185,34 @@ Tyto atributy jsou vyobrazeny na následující tabulce (tečka ve vyobrazení i
 |models-controller.get-value.path
 |URL operace pro stažení výsledku operace načtení modelu ze souboru
 |getParsedModel
+
+|scenes-controller.start-operation.path
+|URL operace pro generaci scén
+|generateScenes
+
+|scenes-controller.get-value.path
+|URL operace pro stažení výsledku operace generace scén
+|getGeneratedScene
+
+|queues.exchange
+|Hodnota exchange pro RabbitMQ
+|artificial-generation-exchange
+
+|queues.model-parsing.request
+|Název fronty pro požadavek na načtení modelu ze souboru
+|modelParsingRequest
+
+|queues.model-parsing.response
+|Název fronty výsledek požadavku na načtení modelu ze souboru
+|modelParsingResponse
+
+|queues.scene-generation.request
+|Název fronty pro požadavek na generaci scén
+|sceneGenerationRequest
+
+|queues.scene-generation.response
+|Název fronty výsledek požadavku na generaci scén
+|sceneGenerationResponse
 
 |===
 

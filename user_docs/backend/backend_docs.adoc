@@ -48,25 +48,222 @@ V současné verzi lze na backendu provádět provádět operace načítání mo
 V případě načítání modelů ze souboru je potřeba tělo požadavku nastavit na form-data a soubor dát pod klíč `file`.
 Při stažení výsledku této operace bude obdržen JSON s následující strukturou:
 
-// TODO
 [source,json]
 ----
+{
+    "mesh": {
+        "vertices": [
+            {
+                "position": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "normal": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "texcoords": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "tangent": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            }
+        ],
+        "faces": [
+            {
+                "indices": [
+                    0,
+                    1,
+                    2
+                ]
+            }
+        ]
+    },
+    "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+    },
+    "scale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+    }
+}
 ----
 
 Pro generaci scén je potřeba nastavit tělo jako formát JSON.
-Tělo musí mít konkrétně strukturu vyobrazený níže.
+Tělo musí mít konkrétně strukturu vyobrazenou níže.
 
-// TODO
 [source,json]
 ----
+{
+    "model": {
+        "mesh": {
+            "vertices": [
+                {
+                    "position": {
+                        "x": 0.0,
+                        "y": 2.0,
+                        "z": -0.5
+                    },
+                    "normal": {
+                        "x": -0.8944,
+                        "y": 0.4472,
+                        "z": 0.0
+                    },
+                    "texcoords": {
+                        "x": 0.75,
+                        "y": 0.5
+                    },
+                    "tangent": {
+                        "x": -0.44721365,
+                        "y": -0.8944273,
+                        "z": 0.0
+                    }
+                }
+            ],
+            "faces": [
+                {
+                    "indices": [
+                        0,
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
+        "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+        },
+        "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+        }
+    },
+    "grabPoints": [
+        {
+            "localPosition": {
+                "x": -0.00779896462,
+                "y": 1.98440206,
+                "z": 0.458221316
+            },
+            "localRotation": {
+                "x": -0.16245988,
+                "y": -0.688191056,
+                "z": -0.16245988,
+                "w": 0.688190937
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        }
+    ],
+    "sceneDefinition": {
+        "sceneNamePrefix": "Scéna",
+        "width": 20,
+        "height": 20,
+        "numberOfVerticalLayers": 1,
+        "numberOfObjects": 10,
+        "numberOfScenes": 10,
+        "useSimulation": false,
+        "generationAlgorithm": 0,
+        "aspectRatio": 0
+    }
+}
 ----
 
 Po dokončení operace se při stažení jejího výsledku obdrží JSON s následující strukturou:
 
-// TODO
 [source,json]
 ----
+{
+    "name": "Scéna0",
+    "width": 20,
+    "height": 20,
+    "cameraPosition": {
+        "x": 10.0,
+        "y": 21.0,
+        "z": 10.0
+    },
+    "modelTransforms": [
+        {
+            "position": {
+                "x": 18.414167,
+                "y": 0.8359551,
+                "z": 12.050449
+            },
+            "rotation": {
+                "x": -0.384724,
+                "y": 0.68457294,
+                "z": 0.42809588,
+                "w": 0.4473045
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        }
+    ],
+    "grabPointTransforms": [
+        {
+            "position": {
+                "x": 17.699686,
+                "y": 1.6235379,
+                "z": 13.787433
+            },
+            "rotation": {
+                "x": -0.52082866,
+                "y": 0.2953365,
+                "z": -0.15403657,
+                "w": 0.785994
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        }
+    ]
+}
 ----
+
+[NOTE]
+====
+Po zahájení operace provoláním některého z endpointu metodou POST je jako odpověď vrácen JSON s touto strukturou:
+
+[source,json]
+----
+{
+    "operationID": "76fd8efc-4556-4c17-85a6-9b3ae7fd1d38"
+}
+----
+
+====
 
 [NOTE]
 ====
