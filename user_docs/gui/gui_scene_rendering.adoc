@@ -55,6 +55,12 @@ Jakmile jsou vyplněny parametry popsané výše, lze provést operaci vykreslen
 V průběhu provádění akce vykreslení jsou do konzole průběžně vypisovány zprávy o postupu vykreslení scén a po jejím dokončení se zobrazí informační dialog (<<fig:sceneRendering.appAfterRenderFinished>>).
 Po dokončení operace zůstává dialog pro nastavení vykreslení otevřený a je potřeba jej zavřít ručně (viz <<sec:popupWindows>>).
 
+[NOTE]
+====
+Operaci vykreslování scén lze kdykoliv přerušit klávesovou zkratkou kbd:[Ctrl + Z].
+Scény, které se do té doby stihly vykreslit zůstanou v souborech zachovány.
+====
+
 .Dialog pro vykreslení scén s vyplněnými hodnotami
 image::2023-07-31T12-49-58-441Z.png[Dialog pro vykreslení scén s vyplněnými hodnotami,id="fig:sceneRendering.renderSettingsDialogFilled"] 
 

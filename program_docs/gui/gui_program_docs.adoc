@@ -1,7 +1,18 @@
 ifndef::imagesdir[:imagesdir: ../../images]
 
-
+[#sec:technicalDocumentationOfGUI]
 = Technická dokumentace grafického rozhraní
 
 
 V této sekci se nachází technická dokumentace grafické části aplikace vytvořené v Unity.
+
+[#sec:initialLoadProjectInUnity]
+== První načtení projektu do Unity
+
+// celý proces i s obrázky...
+
+// základní popis struktury projektu (vlastně jako to je v textu...)
+
+// základní popis scény v projektu
+
+// jak aktualizovat soubory této dokumentace v Unity...

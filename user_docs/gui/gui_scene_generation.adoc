@@ -75,8 +75,24 @@ Jednotlivá pole jsou popsána v následující tabulce včetně významu a mož
 Hodnoty polí, u nichž minimální či maximální hodnoty závisejí na hodnotách jiných polí jsou automaticky aktualizovány pokud dojde k posunutí daných hranic a stávající hodnota těmto hranicím nevyhovuje.
 ====
 
+[WARNING]
+====
+Možnost použití simulací a generace pomocí vzorkování Poissonova disku je k dispozici pouze při navázaném připojení k backendu.
+V opačném případě se zobrazí vyskakovací okno informující o nemožnosti provedení operace.
+====
+
 Jakmile je operace generace scén hotová, zobrazí se dialog s touto informací (<<fig:sceneGeneration.scenesGeneratedDialog>>).
 Pro další práci s vygenerovanými scénami je potřeba se přepnout do obrazovky Scény (viz <<sec:switchScreens>>).
 
+[NOTE]
+====
+Pokud je navázáno připojení k backendu, automaticky se využívá generace na jeho straně.
+====
+
 .Dialog po úspěšném vygenerování scén
 image::2023-07-30T17-50-25-906Z.png[Dialog po úspěšném vygenerování scén,id="fig:sceneGeneration.scenesGeneratedDialog"] 
+
+[NOTE]
+====
+Operaci generování scén lze kdykoliv přerušit klávesovou zkratkou kbd:[Ctrl + Z]
+====

@@ -1,7 +1,58 @@
 ifndef::imagesdir[:imagesdir: ../../images]
 
-
+[#sec:technicalDocumentationOfBackend]
 = Technická dokumentace backendu
 
+Celá aplikace je rozdělena na samostatný backend a frontend.
+Backend je postaven na architektuře mikroslužeb.
+Skládá se konkrétně ze dvou služeb, které spolu komunikují pomocí brokera zpráv RabbitMQ 3.8.
+První služba je implementována ve frameworku Spring Boot 3.1.0 a poskytuje API pro komunikaci s frontendem (tzn. grafickou částí aplikace).
+Druhá služba je implementována v jazyce Python 3.11 a vykonává samotné operace načítání modelů ze souboru a generace scén.
 
-V této sekci se nachází technická dokumentace backendu aplikace.
+[#sec:technicalDocumentationOfSpringBoot]
+== Technická dokumentace služby ve Spring Boot
+Tato služba byla vytvořena ve framevorku Spring Boot 3.1.0 pod Oracle OpenJDK 20.0.1 s úrovní jazyka Java 17.
+Projekt byl vytvořen ve vývojovém prostředí IntelliJ Idea 2022.3 (Ultimate Edition) a následující text tak předpokládá jeho použití.
+
+[#sec:structureOfProjectCreatedInSpringBoot]
+=== Struktura projektu vytvořeného ve Spring Boot
+// základní popis struktury ve Spring Boot
+
+[#sec:attributesInApplicationYml]
+=== Atributy v application.yml
+Tento projekt používá pro nastavení aplikace soubor application.yml.
+V tomto souboru jsou umístěny atributy umožňující pozměnit chování aplikace.
+Jejich hodnoty lze přepsat při spuštění v Dockeru v souboru `docker-compose.dev.yml`.
+Tyto atributy jsou vyobrazeny na následující tabulce (tečka ve vyobrazení indikuje hierarchii).
+
+.Atributy souboru application.yml
+[cols=3, options="header",id="tab:attributesInApplicationYml.attributes",options=unbreakable]
+|===
+
+|Název pole
+|Význam
+|Výchozí hodnota
+
+|api.base-path
+|Základní URL API, od které se odvíjí všechny další
+|/api/v1
+
+|===
+
+[#sec:communicationWhileExecutingActions]
+=== Popis komunikace při prováděných akcích
+Klient 
+// popis jak funguje ta komunikace?
+// popis Dockerfile?
+// seznam knihoven, který se použily?
+
+[#sec:technicalDocumentationOfPython]
+== Technická dokumentace služby v Pythonu
+// Python
+// verze Pythonu => jako v textu
+// základní popis struktury v Pythonu
+// obsah .env filu
+// popis Dockerfile?
+// seznam knihoven, který se použily?
+
+// popis docker compose?

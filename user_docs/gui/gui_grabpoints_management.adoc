@@ -40,7 +40,7 @@ Není zde napřed vyžadováno potvrzení uživatelem.
 
 .Úchopové body po smazání
 image::2023-07-30T13-39-39-975Z.png[Úchopové body po smazání,id="fig:grabPointsManagement.grabPointsAfterDeletion"] 
-
+<<<
 [CAUTION]
 ====
 Akce smazání úchopového bodu nelze zvrátit, je proto doporučeno před touto akcí provést uložení projektu.
@@ -67,7 +67,7 @@ Dále se v pravém panelu vlastností zobrazí pozice, rotace a velikost daného
 Vždy lze vybrat pouze jeden úchopový bod a příslušné zbarvení má vždy pouze ten, který je vybraný.
 Výběrem jiného úchopového bodu dojde ke změně aktivního úchopového bodu.
 ====
-
+<<<
 [WARNING]
 ====
 Výběrem modelu (viz <<sec:modelTransform>>) či smazáním právě vybraného úchopového bodu dojde ke zrušení výběru úchopového bodu a panel Vlastnosti se vrátí do původního stavu.
@@ -124,11 +124,11 @@ Možné hodnoty pro tyto 3 vlastnosti se zde pohybují v rozsahu -100 až 100.
 
 Tato velikost je vždy vyjádřena ve stejném souřadnicovém systému jako pozice a rotace.
 
-.Úchopový bod se změněnou velikostí
-image::2023-07-30T14-09-52-508Z.png[Úchopový bod se změněnou velikostí,id="fig:grabPointsManagement.grabPointWithChangedScale"] 
-
 [NOTE]
 ====
 Transformace provedené na daném úchopovém bodu jsou respektovány při pozdějším generování a vykreslování scén.
 Pokud však byl úchopový bod takto upraven po generaci scén, nebudou tyto změny propsány.
 ====
+
+.Úchopový bod se změněnou velikostí
+image::2023-07-30T14-09-52-508Z.png[Úchopový bod se změněnou velikostí,id="fig:grabPointsManagement.grabPointWithChangedScale"] 

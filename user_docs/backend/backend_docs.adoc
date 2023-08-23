@@ -15,8 +15,25 @@ V prvním případě je potřeba zajistit instanci RabbitMQ a případně poupra
 Ve druhém případě stačí navigovat příkazovým řádkem to složky se souborem docker-compose.dev.yml a zadat příkaz `docker-compose -f docker-compose.dev.yml up –build`.
 Po spuštění tohoto příkazu by měl být backend připraven k použití.
 
-[WARN]
+[WARNING]
 ====
 Před spuštěním příkazu popsaného výše zkontrolujte, že má soubor mvnw v projektu ve Springu nastaven konce řádků na hodnotu LF.
 V opačném případě nemusí být tento soubor nalezen a proces sestavení této části tak může selhat
 ====
+<<<
+[#sec:supportedFormats]
+== Podporované 3D formáty
+
+Aplikace využívá pro zpracování 3D formátů knihovnu https://pypi.org/project/assimp-py/[assimp-py].
+Z tohoto důvodu by mělo být podporováno až přes 40 formátů (vizte https://assimp-docs.readthedocs.io/en/latest/about/introduction.html[dokumentaci knihovny Assimp]).
+Během vývoje byly prakticky otestovány následující formáty:
+
+.fig:modelManagement.modelExportedDialog
+* .obj
+* .dae
+* .fbx
+* .glb
+* .gltf
+* .ply
+* .stl
+* .x3d

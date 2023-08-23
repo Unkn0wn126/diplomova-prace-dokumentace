@@ -21,7 +21,7 @@ Zobrazí se dialog pro připojení k backendu (<<fig:sampleUsage.connectToBacken
 image::2023-07-31T13-56-13-437Z.png[Dialog pro připojení k backendu,id="fig:sampleUsage.connectToBackendDialog"] 
 
 :seq1: {counter:seq1}
-{seq1}. Pokud se chcete připojit k instanci backendu běžící lokálně, ujistěte se, že je tato instance spuštěna.
+{seq1}. Pokud se chcete připojit k instanci backendu běžící lokálně, ujistěte se, že je tato instance spuštěna (viz <<#sec:launchBackend>>).
 
 Pokud spuštěna není, stačí spustit ve složce `diplomova-prace-backend` příkaz `docker-compose -f docker-compose.dev.yml up --build`.
 
@@ -29,8 +29,6 @@ Pokud spuštěna není, stačí spustit ve složce `diplomova-prace-backend` př
 ====
 K provedení tohoto kroku je potřeba mít nainstalovaný nástroj https://docs.docker.com/engine/install/[Docker].
 ====
-
-// TODO příklad běžící instance?
 
 :seq1: {counter:seq1}
 {seq1}. Zadejte url a číslo portu pro připojení k backendu (při připojení k lokální instanci jsou tyto údaje již předvyplněny)

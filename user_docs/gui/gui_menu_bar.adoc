@@ -24,8 +24,7 @@ Upravit::
         Otevře okno pro definici a následnou generaci scén
 Import::
     Model:::
-        Otevře dialog pro import modelu z některého z podporovaných formátů.
-// TODO supported formats section
+        Otevře dialog pro import modelu z některého z podporovaných formátů. (viz <<#sec:supportedFormats>>)
     Model z JSON:::
         Otevře dialog pro import modelu ze souboru typu JSON s formátem, který využívá tato aplikace.
 Export::

@@ -83,8 +83,7 @@ Ačkoliv nelze v aplikaci modifikovat velikost modelu, je tato informace uchová
 [#sec:loadModelFromFile]
 === Načtení modelu ze souboru
 
-Model lze načíst ze souboru typu JSON či ostatních podporovaných 3D formátů.
-// TODO sekce o podporovaných 3D formátech
+Model lze načíst ze souboru typu JSON či ostatních podporovaných 3D formátů (viz <<#sec:supportedFormats>>).
 Pro obě možnosti jsou vyhrazeny rozdílné položky v liště s menu (viz <<sec:menuBar>>).
 
 Pro načtení modelu ze souboru JSON slouží položka menu:Import[Model z JSON], zatímco pro ostatní formáty slouží položka menu:Import[Model].
@@ -103,6 +102,11 @@ V opačném případě se zobrazí dialog s chybou informující o chybějícím
 
 .Chyba při pokusu při pokusu o načtení modelu bez připojení k backendu
 image::2023-07-30T10-02-34-476Z.png[Chyba při pokusu při pokusu o načtení modelu bez připojení k backendu,id="fig:modelManagement.importModelWithoutConnectionError"] 
+====
+
+[NOTE]
+====
+Operaci načítání modelu s pomocí backendu lze kdykoliv přerušit klávesovou zkratkou kbd:[Ctrl + Z]
 ====
 
 V případě pokusu o načtení nevalidního souboru se zobrazí dialogové okno s chybou (<<fig:modelManagement.importModelErrorDialog>>).
@@ -129,13 +133,14 @@ Je možné vybrat existující soubor typu JSON, či zadat příslušné jméno 
 V případě, že v zadaném jméně nebude koncovka `.json`, bude do názvu automaticky doplněna.
 
 .Dialog pro výběr souboru, do kterého má být model uložen
-image::2023-07-30T11-17-41-774Z.png[Dialog pro výběr souboru, do kterého má být model uložen,,id="fig:modelManagement.exportModelDialog"] 
+image::2023-07-30T11-17-41-774Z.png[Dialog pro výběr souboru, do kterého má být model uložen,id="fig:modelManagement.exportModelDialog"] 
 
 [NOTE]
 ====
 Do výsledného souboru se vyjma samotné geometrické sítě modelu ukládají také jeho pozice, rotace a velikost.
 ====
 
-Provedením těchto kroků bude model úspěšně exportován.
+Provedením těchto kroků bude model úspěšně exportován (<<fig:modelManagement.modelExportedDialog>>).
 
-// TODO dialog o úspěšném exportu?
+.Dialog po vyexportování modelu do souboru JSON
+image::2023-08-23T21-25-41-430Z.png[Dialog po vyexportování modelu do souboru JSON,id="fig:modelManagement.modelExportedDialog"] 
