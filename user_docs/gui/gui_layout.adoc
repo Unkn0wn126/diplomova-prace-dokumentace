@@ -8,13 +8,13 @@ Okno aplikace je obecně rozděleno do 4 sekcí (viz <<fig:basicAppLayout.applic
 .Rozdělení aplikace
 image::2023-07-29T13-28-19-773Z.png[Rozdělení aplikace,id="fig:basicAppLayout.applicationLayout"] 
 
-V první sekci (<<fig:basicAppLayout.menuBar>>) se nachází nástrojová lišta podobně jako ve standardních aplikacích.
+V první sekci (<<fig:basicAppLayout.menuBar>>) se nachází lišta s menu podobně jako ve standardních aplikacích.
 Pro její položky a bližší informace viz <<sec:menuBar>>
 
-.Nástrojová lišta
-image::2023-07-29T13-39-53-486Z.png[Nástrojová lišta,id="fig:basicAppLayout.menuBar"] 
+.Lišta s menu
+image::2023-07-29T13-39-53-486Z.png[Lišta s menu,id="fig:basicAppLayout.menuBar"] 
 
-Pod nástrojovou lištou se nachází stavový panel s dalšími ovládacími prvky (<<fig:basicAppLayout.buttonsPanel>>).
+Pod lištou s menu se nachází stavový panel s dalšími ovládacími prvky (<<fig:basicAppLayout.buttonsPanel>>).
 Je vždy viditelný a jeho účelem je umožnit přepínání mezi zrovna aktivní obrazovkou (viz <<sec:mainWindow>>), umožnit připojení k backendu a informovat uživatele o momentálním stavu připojení k backendu.
 Více viz <<sec:buttonsPanel>>.
 

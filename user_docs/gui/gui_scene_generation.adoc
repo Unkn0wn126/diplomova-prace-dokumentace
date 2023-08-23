@@ -4,7 +4,7 @@ ifndef::imagesdir[:imagesdir: ../../images]
 == Generace scén
 
 Před samotnou generací scén je potřeba zadat příslušné parametry.
-Tento proces započne vybráním položky menu:Upravit[Definovat scény] v nástrojové liště (viz <<sec:menuBar>>).
+Tento proces započne vybráním položky menu:Upravit[Definovat scény] v liště s menu (viz <<sec:menuBar>>).
 
 Po kliknutí na tuto položku se zobrazí dialogové okno (<<fig:sceneGeneration.sceneDefinitionDialog>>) umožňující zadat příslušné parametry, uložit zvolené parametry (btn:[Uložit]), vygenerovat scény dle těchto parametrů (btn:[Generovat]) a vyresetovat provedené úpravy (btn:[Reset]).
 

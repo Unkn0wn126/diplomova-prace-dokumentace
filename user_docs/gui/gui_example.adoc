@@ -51,7 +51,7 @@ V takovém případě je potřeba prozkoumat validitu zadaných údajů a vyzkou
 image::2023-07-31T14-10-01-629Z.png[Dialog informující o chybě při pokusu o připojení k backendu,id="fig:sampleUsage.backendConnectionFailedDialog"] 
 
 :seq1: {counter:seq1}
-{seq1}. Klikněte na položku menu:Import[Model] v nástrojové liště a v zobrazeném dialogu vyberte požadovaný model pro načtení (<<fig:sampleUsage.importModelFromFileDialog>>).
+{seq1}. Klikněte na položku menu:Import[Model] v liště s menu a v zobrazeném dialogu vyberte požadovaný model pro načtení (<<fig:sampleUsage.importModelFromFileDialog>>).
 
 .Dialog pro výběr modelu, který se má nahrát
 image::2023-07-31T14-17-48-939Z.png[Dialog pro výběr modelu, který se má nahrát,id="fig:sampleUsage.importModelFromFileDialog"] 
@@ -68,7 +68,7 @@ image::2023-07-31T14-18-03-188Z.png[Model po načtení ve scéně,id="fig:sample
 image::2023-07-31T14-18-45-121Z.png[Model s vytvořenými úchopovými body,id="fig:sampleUsage.modelWithGrabPoints"] 
 
 :seq1: {counter:seq1}
-{seq1}. V nástrojové liště vyberte položku menu:Upravit[Definovat scény].
+{seq1}. V liště s menu vyberte položku menu:Upravit[Definovat scény].
 
 Zobrazí se dialog pro definici scén (<<fig:sampleUsage.sceneDefinitionDialog>>).
 
@@ -138,7 +138,7 @@ image::2023-07-31T23-10-51-419Z.png[Dialog s informací o dokončeném vykreslen
 image::2023-07-31T14-37-15-512Z.png[Vykreslené scény zobrazené v systémovém průzkumníku souborů,id="fig:sampleUsage.rendersInSystemExplorer"] 
 
 :seq1: {counter:seq1}
-{seq1}. Vytvořený projekt uložte kliknutím na položku v nástrojové liště menu:Soubor[Uložit (Ctrl + S)] či pomocí klávesové zkratky kbd:[Ctrl + S].
+{seq1}. Vytvořený projekt uložte kliknutím na položku v liště s menu menu:Soubor[Uložit (Ctrl + S)] či pomocí klávesové zkratky kbd:[Ctrl + S].
 Po uložení se zobrazí informační dialog (<<fig:sampleUsage.projectSavedDialog>>).
 
 .Informační dialog zobrazený po uložení projektu

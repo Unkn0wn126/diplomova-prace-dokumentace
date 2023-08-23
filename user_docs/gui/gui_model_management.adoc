@@ -85,7 +85,7 @@ Ačkoliv nelze v aplikaci modifikovat velikost modelu, je tato informace uchová
 
 Model lze načíst ze souboru typu JSON či ostatních podporovaných 3D formátů.
 // TODO sekce o podporovaných 3D formátech
-Pro obě možnosti jsou vyhrazeny rozdílné položky v nástrojové liště (viz <<sec:menuBar>>).
+Pro obě možnosti jsou vyhrazeny rozdílné položky v liště s menu (viz <<sec:menuBar>>).
 
 Pro načtení modelu ze souboru JSON slouží položka menu:Import[Model z JSON], zatímco pro ostatní formáty slouží položka menu:Import[Model].
 V obou případech se zobrazí dialog pro otevření souboru (<<fig:modelManagement.importModelFromFileDialog>>, <<fig:modelManagement.importModelFromJsonFileDialog>>).
@@ -122,7 +122,7 @@ Tímto krokem je načtení modelu ze souboru dokončeno a lze s ním dále praco
 [#sec:exportModelToJson]
 === Exportování modelu do JSON souboru
 
-Exportování modelu započne výběrem položky menu:Export[Model do JSON] z nástrojové lišty (viz <<sec:menuBar>>).
+Exportování modelu započne výběrem položky menu:Export[Model do JSON] v liště s menu (viz <<sec:menuBar>>).
 Po výběru této položky se zobrazí dialog pro výběr souboru, do kterého se má model exportovat (<<fig:modelManagement.exportModelDialog>>).
 
 Je možné vybrat existující soubor typu JSON, či zadat příslušné jméno přímo.

@@ -1,12 +1,12 @@
 ifndef::imagesdir[:imagesdir: ../../images]
 
 [#sec:menuBar]
-== Nástrojová lišta
+== Lišta s menu
 
-Nástrojová lišta (<<fig:menuBar.menuBarItems>>) se nachází ve vrchní sekci okna aplikace.
+Lišta s menu (<<fig:menuBar.menuBarItems>>) se nachází ve vrchní sekci okna aplikace.
 
-.Položky nástrojové lišty
-image::2023-07-29T16-37-57-912Z.png[Položky nástrojové lišty,id="fig:menuBar.menuBarItems"] 
+.Položky lišty s menu
+image::2023-07-29T16-37-57-912Z.png[Položky lišty s menu,id="fig:menuBar.menuBarItems"] 
 
 Nabídky v liště a jejich funkce jsou následující:
 
