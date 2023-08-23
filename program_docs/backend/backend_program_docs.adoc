@@ -16,7 +16,144 @@ Projekt byl vytvořen ve vývojovém prostředí IntelliJ Idea 2022.3 (Ultimate 
 
 [#sec:structureOfProjectCreatedInSpringBoot]
 === Struktura projektu vytvořeného ve Spring Boot
-// základní popis struktury ve Spring Boot
+Projekt je rozdělen do balíčků dle jednotlivých vlastností.
+Každý z těchto balíčků je poté dále dělen dle konkrétních forem (např. services pro služby, ...).
+Tato struktura je vyobrazena na následujících tabulkách.
+
+.Balíčky projektu ve Spring Boot
+[cols=2, options="header",id="tab:structureOfProjectCreatedInSpringBoot.packages",options=unbreakable]
+|===
+
+|Název balíčku
+|Oblast
+
+|api
+|Funkce související s API 
+
+|common
+|Funkce společné pro všechny části projektu
+
+|models
+|Funkce související s modely
+
+|queueing
+|Funkce související s frontami zpráv
+
+|scenes
+|Funkce související se scénami
+
+|sockets
+|Funkce související se Socket.IO
+
+|===
+
+.Balíčky v balíčku api
+[cols=2, options="header",id="tab:structureOfProjectCreatedInSpringBoot.packagesInApiPackage",options=unbreakable]
+|===
+
+|Název balíčku
+|Oblast
+
+|config
+|Konfigurace API 
+
+|controllers.v1
+|Řadiče pro jednotlivé endpointy API
+
+|dto
+|Datové objekty pro komunikaci s klientem
+
+|exceptions
+|Řešení výjimek v řadičích
+
+|filters
+|Filtry pro autentizaci
+
+|services
+|Služby pro obsluhu požadavků na API
+
+|util
+|Pomocné třídy
+
+|===
+
+.Balíčky v balíčku common
+[cols=2, options="header",id="tab:structureOfProjectCreatedInSpringBoot.packagesInCommonPackage",options=unbreakable]
+|===
+
+|Název balíčku
+|Oblast
+
+|domain
+|Doménové objekty 
+
+|services
+|Služby důležité pro celý projekt
+
+|===
+
+.Balíčky v balíčku models
+[cols=2, options="header",id="tab:structureOfProjectCreatedInSpringBoot.packagesInModelsPackage",options=unbreakable]
+|===
+
+|Název balíčku
+|Oblast
+
+|dto
+|Datové objekty související s modely
+
+|===
+
+.Balíčky v balíčku queueing
+[cols=2, options="header",id="tab:structureOfProjectCreatedInSpringBoot.packagesInQueueingPackage",options=unbreakable]
+|===
+
+|Název balíčku
+|Oblast
+
+|config
+|Konfigurace komunikace s RabbitMQ 
+
+|domain
+|Doménové objekty související s komunikací přes RabbitMQ
+
+|services
+|Služby související s komunikací přes RabbitMQ
+
+|util
+|Pomocné třídy
+
+|===
+
+.Balíčky v balíčku sockets
+[cols=2, options="header",id="tab:structureOfProjectCreatedInSpringBoot.packagesInSocketsPackage",options=unbreakable]
+|===
+
+|Název balíčku
+|Oblast
+
+|config
+|Konfigurace Socket.IO serveru
+
+|controllers
+|Řadiče pro komunikaci přes Socket.IO server
+
+|dto
+|Datové objekty pro komunikaci s klientem
+
+|services
+|Služby pro potřeby práce se serverem Socket.IO
+
+|util
+|Pomocné třídy
+
+|===
+
+[NOTE]
+====
+V kódu samotném nebyly vytvořeny dokumentační komentáře.
+Při jeho tvorbě byla vynaložena snaha jej zdokumentovat již samotnou strukturou a názvy jednotlivých tříd a atributů.
+====
 
 [#sec:attributesInApplicationYml]
 === Atributy v application.yml
@@ -37,7 +174,67 @@ Tyto atributy jsou vyobrazeny na následující tabulce (tečka ve vyobrazení i
 |Základní URL API, od které se odvíjí všechny další
 |/api/v1
 
+|models-controller.base-path
+|Základní URL řadiče API pro modely
+|models
+
+|models-controller.start-operation.path
+|URL operace pro načtení modelu ze souboru
+|parseModelFromFile
+
+|models-controller.get-value.path
+|URL operace pro stažení výsledku operace načtení modelu ze souboru
+|getParsedModel
+
 |===
+
+[source,yaml]
+----
+api:
+  base-path: /api/v1
+
+models-controller:
+  base-path: models
+  start-operation:
+    path: parseModelFromFile
+  get-value:
+    path: getParsedModel
+
+scenes-controller:
+  base-path: scenes
+  start-operation:
+    path: generateScenes
+  get-value:
+    path: getGeneratedScene
+
+socket-server:
+  port: 8085
+  host: 0.0.0.0
+
+server:
+  port: 8080
+
+queues:
+  exchange: artificial-generation-exchange
+  model-parsing:
+    request: modelParsingRequest
+    response: modelParsingResponse
+  scene-generation:
+    request: sceneGenerationRequest
+    response: sceneGenerationResponse
+
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 15MB
+  rabbitmq:
+    host: localhost
+    port: 5672
+    password: mypassword
+    username: myuser
+----
 
 [#sec:communicationWhileExecutingActions]
 === Popis komunikace při prováděných akcích
@@ -51,6 +248,11 @@ Klient
 // Python
 // verze Pythonu => jako v textu
 // základní popis struktury v Pythonu
+[NOTE]
+====
+V kódu samotném nebyly vytvořeny dokumentační komentáře.
+Při jeho tvorbě byla vynaložena snaha jej zdokumentovat již samotnou strukturou a názvy jednotlivých tříd a atributů.
+====
 // obsah .env filu
 // popis Dockerfile?
 // seznam knihoven, který se použily?

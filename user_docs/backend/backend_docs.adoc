@@ -12,7 +12,7 @@ V této sekci je popsán způsob práce s backendem aplikace pro koncového uži
 Backend lze spustit tradičním způsobem lokálně či pomocí Dockeru.
 V prvním případě je potřeba zajistit instanci RabbitMQ a případně poupravit nastavení v application.yml pro projekt ve Springu a soubor .env pro projekt v Pythonu.
 // TODO popis .env nastavení pro Python v technické dokumentaci?
-Ve druhém případě stačí navigovat příkazovým řádkem to složky se souborem docker-compose.dev.yml a zadat příkaz `docker-compose -f docker-compose.dev.yml up –build`.
+Ve druhém případě stačí navigovat příkazovým řádkem to složky se souborem `docker-compose.dev.yml` a zadat příkaz `docker-compose -f docker-compose.dev.yml up –build`.
 Po spuštění tohoto příkazu by měl být backend připraven k použití.
 
 [WARNING]
@@ -20,12 +20,65 @@ Po spuštění tohoto příkazu by měl být backend připraven k použití.
 Před spuštěním příkazu popsaného výše zkontrolujte, že má soubor mvnw v projektu ve Springu nastaven konce řádků na hodnotu LF.
 V opačném případě nemusí být tento soubor nalezen a proces sestavení této části tak může selhat
 ====
+
+[#sec:useBackend]
+== Použití backendu
+
+Po spuštění se lze pomocí grafické části aplikace (viz <<sec:backendConnection>>) či jiného Socket.IO klienta (lze využít např. https://www.postman.com/[Postman]) připojit k backendu (ve výchozím nastavení na adrese `localhost:8085`).
+Pro veškeré další operace je vyžadováno, aby toto spojení bylo navázáno.
+
+Před navázáním spojení je potřeba naslouchat události `after_connect`, na jejímž základě se obdrží klientské ID a cesty s portem pro zahájení podporovaných operací (ve výchozím nastavení pod url `localhost:8080/api/v1/models/parseModelFromFile` a `localhost:8080/api/v1/scenes/generateScenes`; pro obě musí být použita metoda *POST*).
+
 <<<
+[WARNING]
+====
+Obdržené ID je potřeba vkládat do hlavičky jednotlivých požadavků pod klíčem `client-id`, jinak budou požadavky odmítnuty s HTTP kódem 401.
+====
+
+Po provolání některého z endpointů je vráceno ID operace, která byla zařazena do fronty na zpracování.
+Před provoláním endpointů je pro získání výsledků potřeba začít naslouchat události `operation_finished`, ze které se se po dokončení operace obdrží url, ze které se má výsledek stáhnout.
+
+[NOTE]
+====
+Pro získávání průběžných zpráv z backendu lze také naslouchat události `backend_log`.
+====
+
+V současné verzi lze na backendu provádět provádět operace načítání modelu ze souboru a generace scén dle parametrů.
+
+V případě načítání modelů ze souboru je potřeba tělo požadavku nastavit na form-data a soubor dát pod klíč `file`.
+Při stažení výsledku této operace bude obdržen JSON s následující strukturou:
+
+// TODO
+[source,json]
+----
+----
+
+Pro generaci scén je potřeba nastavit tělo jako formát JSON.
+Tělo musí mít konkrétně strukturu vyobrazený níže.
+
+// TODO
+[source,json]
+----
+----
+
+Po dokončení operace se při stažení jejího výsledku obdrží JSON s následující strukturou:
+
+// TODO
+[source,json]
+----
+----
+
+[NOTE]
+====
+Stav úspěchu vykonané operace je uveden již v okamžiku vyvolání události indikující, že lze výsledek stáhnout.
+V případě neúspěchu operace lze výsledek stále stáhnout, pouze bude obsah pole pro samotná data v odpovědi prázdný.
+====
+
 [#sec:supportedFormats]
 == Podporované 3D formáty
 
 Aplikace využívá pro zpracování 3D formátů knihovnu https://pypi.org/project/assimp-py/[assimp-py].
-Z tohoto důvodu by mělo být podporováno až přes 40 formátů (vizte https://assimp-docs.readthedocs.io/en/latest/about/introduction.html[dokumentaci knihovny Assimp]).
+Z tohoto důvodu by mělo být podporováno až přes 40 formátů (viz https://assimp-docs.readthedocs.io/en/latest/about/introduction.html[dokumentaci Assimp]).
 Během vývoje byly prakticky otestovány následující formáty:
 
 .fig:modelManagement.modelExportedDialog

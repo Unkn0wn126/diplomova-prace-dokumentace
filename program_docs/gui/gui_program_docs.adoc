@@ -12,6 +12,11 @@ V této sekci se nachází technická dokumentace grafické části aplikace vyt
 // celý proces i s obrázky...
 
 // základní popis struktury projektu (vlastně jako to je v textu...)
+[NOTE]
+====
+V kódu samotném nebyly vytvořeny dokumentační komentáře.
+Při jeho tvorbě byla vynaložena snaha jej zdokumentovat již samotnou strukturou a názvy jednotlivých tříd a atributů.
+====
 
 // základní popis scény v projektu
 
