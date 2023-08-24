@@ -10,17 +10,20 @@ Tato část byla vytvořena ve verzi Unity 2022.3.0f1.
 == První načtení projektu do Unity
 Nejprve vytvořte standardní projekt ze šablony 3D Core.
 
-image::2023-08-24T01-01-51-006Z.png[] 
+.Okno pro vytvoření nového projektu v Unity
+image::2023-08-24T01-01-51-006Z.png[Okno pro vytvoření nového projektu v Unity,id="fig:technicalDocumentationOfGUI.createNewProjectInUnity"] 
 
 Poté jej otevřete a z lišty s menu vyberte nabídku Asset > Import Package > Custom Package...
 
-image::2023-08-24T01-05-03-450Z.png[] 
+.Nabídka pro import balíčku ze souboru
+image::2023-08-24T01-05-03-450Z.png[Nabídka pro import balíčku ze souboru,id="fig:technicalDocumentationOfGUI.importCustomPackage"] 
 
 V dialogu vyberte soubor dp_frontend.unitypackage (v příloze k této práci je ve složce `frontend/package/`) a klikněte na tlačítko btn:[Otevřít].
 Zobrazí se okno Import Unity Package.
 V tomto okně vyberte vše a stiskněte tlačítko btn:[Import].
 
-image::2023-08-24T01-07-34-615Z.png[] 
+.Okno Import Unity Package
+image::2023-08-24T01-07-34-615Z.png[Okno Import Unity Package,id="fig:technicalDocumentationOfGUI.importUnityPackageWindow"] 
 
 V tomto bodě budou naimportovány zdrojové kódy a assety vytvořené pro tuto aplikaci.
 Aplikace má však další závislosti, které je potřeba též doinstalovat.
@@ -35,9 +38,11 @@ Poté nainstalujte knihovnu https://github.com/yasirkula/UnitySimpleFileBrowser.
 V tomto případě již jde využít Package Manager v nabídce Window > Package Manager.
 Zde stiskněte tlačítko btn:[+] a vyberte nabídku Add package from Git url..., do pole vložte následující hodnotu: `https://github.com/yasirkula/UnitySimpleFileBrowser.git` a stiskněte tlačítko btn:[Add]
 
-image::2023-08-24T01-16-42-448Z.png[] 
+.Nabídka Add package from git URL
+image::2023-08-24T01-16-42-448Z.png[Nabídka Add package from git URL,id="fig:technicalDocumentationOfGUI.addPackageFromGitURL"] 
 
-image::2023-08-24T01-16-57-217Z.png[] 
+Pole pro zadání Git URL
+image::2023-08-24T01-16-57-217Z.png[Pole pro zadání Git URL,id="fig:technicalDocumentationOfGUI.gitURLField"] 
 
 Stejnou operaci proveďte také v případě https://github.com/itisnajim/SocketIOUnity.git[SocketIOUnity] (hodnota pro vložení: `https://github.com/itisnajim/SocketIOUnity.git`).
 
@@ -48,13 +53,16 @@ Poté otevřete složku Scenes a dvakrát poklepejte levým tlačítkem myši na
 Zobrazí se dialog umožňující importovat balíček TextMeshPro.
 Klikněte na tlačítko btn:[Import TMP Essentials].
 
-image::2023-08-24T01-23-44-256Z.png[] 
+.Dialog pro importování TextMeshPro
+image::2023-08-24T01-23-44-256Z.png[Dialog pro importování TextMeshPro,id="fig:technicalDocumentationOfGUI.importTMPEssentials"] 
 
 Stiskněte tlačítko Play pro vyzkoušení, zda kompilace proběhne v pořádku.
 Projekt by měl být nyní plně funkční a připravený k dalším úpravám.
 
 [#sec:structureOfUnityProject]
 === Struktura projektu v Unity
+Projekt je rozdělen do jednotlivých složek dle jednotlivých vlastností.
+V rámci těchto složek je poté dále členěn dle konkrétních funkcí.
 
 .Základní struktura projektu v Unity
 [cols=2, options="header",id="tab:structureOfProjectCreatedInUnity.packages",options=unbreakable]
@@ -91,7 +99,7 @@ Projekt by měl být nyní plně funkční a připravený k dalším úpravám.
 |Nastavení Dependency Injection kontejneru
 
 |Enums
-|Definice výčtu s~chováním
+|Definice výčtu s chováním
 
 |EventSystem
 |Systém událostí aplikace
@@ -103,7 +111,7 @@ Projekt by měl být nyní plně funkční a připravený k dalším úpravám.
 |Obecné grafické komponenty
 
 |Logging
-|Logování v~aplikaci
+|Logování v aplikaci
 
 |ScreensManaging
 |Správa obrazovek
@@ -143,6 +151,8 @@ V kódu samotném nebyly vytvořeny dokumentační komentáře.
 Při jeho tvorbě byla vynaložena snaha jej zdokumentovat již samotnou strukturou a názvy jednotlivých tříd a atributů.
 ====
 
+V jednotlivých složkách se zpravidla také nachází složka Prefabs, ve které jsou uložené příslušné prefaby použité ve scéně.
+
 Výchozí nastavení projektu lze pozměnit modifikací souboru `ProjectContextDefaultState` ve složce `Assets/App/Core/ProjectContext/Config/`.
 
 Aktualizace přiložené dokumentace se provede vložením souboru index.html a složky images do složky StreamingAssets.
@@ -152,7 +162,8 @@ Toto lze provést i v případě hotového buildu mimo editor.
 === Struktura scény v projektu v Unity
 Hlavní struktura scény je vyobrazena na následujícím obrázku.
 
-image::2023-08-24T01-28-54-981Z.png[] 
+.Hlavní hierarchie scény
+image::2023-08-24T01-28-54-981Z.png[Hlavní hierarchie scény,id="fig:technicalDocumentationOfGUI.mainSceneHierarchy"] 
 
 Obsah scény se z větší části nachází pod objektem GUI, který obsahuje komponentu Canvas.
 
@@ -182,3 +193,6 @@ Objekt EventSystem byl přidán automaticky Unity při vytvoření objektu typu 
 Objekt ProfilingContext je aktivní pouze v rámci editoru a slouží pro snímání hodnot využití některých zdrojů.
 Snímání lze započít a ukončit klávesou F12.
 V buildu mimo editor jej však použít nelze.
+
+Komunikace mezi objekty ve scéně je řešena pomocí ScriptableObjects, které jsou vytvořeny na základě definic ve složce `App/Common/EventSystem/ScriptableObjects`.
+Pro naslouchání těmto událostem slouží naslouchači, kteří dědí ze tříd definovaných v `App/Common/EventSystem/Listeners/Scripts`.
