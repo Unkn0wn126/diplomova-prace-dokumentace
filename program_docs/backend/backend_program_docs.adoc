@@ -216,6 +216,8 @@ Atributy vytvořené specificky pro tento projekt jsou vyobrazeny na následují
 
 |===
 
+Celková podoba souboru application.yml je vyobrazena níže.
+
 [source,yaml]
 ----
 api:
@@ -266,23 +268,229 @@ spring:
 
 [#sec:communicationWhileExecutingActions]
 === Popis komunikace při prováděných akcích
-Klient 
-// popis jak funguje ta komunikace?
-// popis Dockerfile?
-// seznam knihoven, který se použily?
+Klient se musí nejprve připojit k Socket.IO serveru (zde implementován pomocí knihovny Netty Socket.IO).
+Po tomto připojení je mu posláno UUID, které později slouží jako autentizace při veškerých požadavcích na API.
+Toto UUID je zároveň uloženo do ConcurrentHashMap ve třídě `ActiveClientsService` (balíček `common.services`).
+V rámci struktury do této mapy ukládané jsou uchovávány také informace o jednotlivých operacích, které klient započal.
+
+Při provolání kteréhokoliv endpointu API je vždy v rámci filtru vůči této službě zkontrolováno ID v hlavičce pod hodnotou klíče `client-id`.
+Pokud tato hodnota chybí, nebo zde není vedena, je vrácen kód HTTP 401 jako kdyby uživatel nebyl přihlášený.
+Pro realizaci tohoto omezení byla použita knihovna Spring Security 6.1.2.
+
+Pokud požadavek proběhl v pořádku, je odeslán pokyn na zahájení operace do fronty a klientovi se vrátí její UUID.
+Po dokončení operace se ze zprávy vyextrahují potřebná data a uloží do dočasného souboru pro pozdější zpřístupnění klientovi.
+Jakmile klient zažádá o výsledek operace, je obsloužen s pomocí třídy InputStreamResource, které se předá proud k danému souboru.
+Pro serializaci dat do formátu JSON je použita knihovna Jackson a každé operaci může příslušet 1 – n souborů s výsledky.
 
 [#sec:technicalDocumentationOfPython]
 == Technická dokumentace služby v Pythonu
-// Python
-// verze Pythonu => jako v textu
-// základní popis struktury v Pythonu
+Tento projekt byl vytvářen v jazyce Python 3.11 s pomocí vývojového prostředí PyCharm 2022.3.1 (Community edition) s využitím https://docs.python.org/3/library/venv.html[virtuálního prostředí].
+Následující text tudíž předpokládá stejné programové vybavení.
+
+V rámci tohoto projektu byly využity následující knihovny (hodnoty uvedeny v souboru requirements.txt):
+
+[source,txt]
+----
+assimp-py==1.0.7
+Cython==3.0.0
+multipledispatch==1.0.0
+numpy==1.25.2
+pika==1.3.2
+poisson-disc==0.2.1
+pybullet==3.2.5
+pyrr==0.10.3
+python-dotenv==1.0.0
+python-fcl==0.7.0.4
+trimesh==3.23.1
+----
+
+Na základě tohoto souboru je před prvním spuštěním potřeba tyto knihovny nainstalovat příkazem `pip install -r requirements.txt`.
+
+Celá tato část backendu pouze vykonává operace na základě příchozích zpráv z fronty.
+Výsledky poté posílá do jiné fronty dle daného typu operace.
+Pro tuto komunikaci byla využita knihovna https://pypi.org/project/pika/[pika].
+
+[#sec:structureOfProjectCreatedInPython]
+=== Struktura projektu vytvořeného v Pythonu
+
+I v tomto případě byl projekt rozdělen dle jednotlivých vlastností.
+V tomto případě je však z důvodu odlišných konvencí výsledná struktura méně zanořena.
+Hlavní zdrojové kódy se nachází v balíčku src.
+Balíček test pak pro vytvořené případy kopíruje strukturu balíčku src a pro testovací účely obsahuje také soubory s daty, které vytvořil autor této aplikace (v případě 3D formátů byly vytvořeny v programu Blender 3.4.0).
+Tato struktura je vyobrazena na následujících tabulkách.
+
+.Obsah balíčku src
+[cols=2, options="header",id="tab:structureOfProjectCreatedInPython.srcPackageContent",options=unbreakable]
+|===
+
+|Název položky
+|Oblast
+
+|models
+|Funkce související s modely a jejich parsováním
+
+|queueing
+|Funkce související s komunikací s RabbitMQ
+
+|scenes
+|Funkce související se scénami a jejich generací
+
+|artificial_generation.py
+|Hlavní spouštěcí soubor
+
+|===
+
+.Obsah balíčku models
+[cols=2, options="header",id="tab:structureOfProjectCreatedInPython.modelsPackageContent",options=unbreakable]
+|===
+
+|Název modulu
+|Oblast
+
+|conversion.py
+|Funkce související s konverzí tříd do slovníku
+
+|domain.py
+|Doménové třídy
+
+|parsing.py
+|Funkce související parsováním modelů ze souboru
+
+|===
+
+.Obsah balíčku queueing
+[cols=2, options="header",id="tab:structureOfProjectCreatedInPython.queueingPackageContent",options=unbreakable]
+|===
+
+|Název modulu
+|Oblast
+
+|config.py
+|Třída obalující nastavení přo připojení k RabbitMQ
+
+|constants.py
+|Konstanty
+
+|workers.py
+|Komunikace s RabbitMQ a provádění požadovaných operací
+
+|===
+
+.Obsah balíčku scenes
+[cols=2, options="header",id="tab:structureOfProjectCreatedInPython.scenesPackageContent",options=unbreakable]
+|===
+
+|Název modulu
+|Oblast
+
+|conversion.py
+|Funkce související s konverzí tříd do slovníku
+
+|domain.py
+|Doménové třídy
+
+|generation.py
+|Funkce související s generací scén
+
+|simulation.py
+|Funkce s aplikací simulací na modely ve scéně
+
+|===
+
+
 [NOTE]
 ====
 V kódu samotném nebyly vytvořeny dokumentační komentáře.
 Při jeho tvorbě byla vynaložena snaha jej zdokumentovat již samotnou strukturou a názvy jednotlivých tříd a atributů.
 ====
-// obsah .env filu
-// popis Dockerfile?
-// seznam knihoven, který se použily?
 
-// popis docker compose?
+[#sec:attributesInEnvFile]
+=== Atributy v souboru .env
+Pro snazší nastavení a možnost přepsání zvolených hodnot při spuštění v Dockeru byl vytvořen soubor .env, který v sobě uchovává následující atributy:
+
+.Atributy souboru .env
+[cols=3, options="header",id="tab:attributesInEnvFile.attributes",options=unbreakable]
+|===
+
+|Název pole
+|Význam
+|Výchozí hodnota
+
+|RABBIT_HOST
+|Adresa instance RabbitMQ
+|localhost
+
+|RABBIT_PORT
+|Port instance RabbitMQ
+|5672
+
+|RABBIT_USERNAME
+|Uživatelské jméno pro připojení k RabbitMQ
+|myuser
+
+|RABBIT_PASSWORD
+|Uživatelské heslo přo připojení k RabbitMQ
+|mypassword
+
+|SCENE_GENERATION_WORKERS_COUNT
+|Počet procesů, které se mají spustit pro obsluhu operací generace scén
+|4
+
+|MODEL_PARSING_WORKERS_COUNT
+|Počet procesů, které se mají spustit pro obsluhu operací parsování modelů
+|1
+
+|MODEL_PARSING_MIN_WORKERS_COUNT
+|Minimální počet procesů, které se mají spustit pro obsluhu operací parsování modelů
+|1
+
+|QUEUES_MODEL-PARSING_REQUEST
+|Název fronty pro přijímání požadavků o parsování modelů
+|modelParsingRequest
+
+|QUEUES_MODEL-PARSING_RESPONSE
+|Název fronty pro odeslání výsledků z operace parsování modelů
+|modelParsingResponse
+
+|QUEUES_SCENE-GENERATION_REQUEST
+|Název fronty pro přijímání požadavků o generaci scén
+|sceneGenerationRequest
+
+|QUEUES_SCENE-GENERATION_RESPONSE
+|Název fronty pro odeslání výsledků z operace generace scény
+|sceneGenerationResponse
+
+|QUEUES_EXCHANGE
+|Exchange front v RabbitMQ
+|artificial-generation-exchange
+
+|===
+
+[#sec:processingOfModelParsingOperations]
+=== Popis zpracování operací parsování modelů
+Jakmile je obdržena zpráva z požadavkem, je z ní získán obsah souboru a vytvořen dočasný soubor, který se předá knihovně assimp-py.
+Pomocí této knihovny jsou ze souboru získána data o modelu, která jsou poté převedena do vlastní reprezentace.
+Ta je poté převedena do slovníku a následně do řetězce JSON, který se poté v rámci dalšího řetězce JSON odešle do fronty pro odpovědi.
+V případě chyb se odešle pouze obalový řetězec JSON s informací o chybě.
+
+[#sec:processingOfSceneGenerationOperations]
+=== Popis zpracování operací generace scén
+Po obdržení zprávy s požadavkem se z obsahu sestaví místní reprezentace tohoto požadavku, ze kterého se poté sestaví parametry pro generaci a také samotný model a úchopové body.
+
+Na základě těchto parametrů jsou poté generovány náhodné pozice pro objekt.
+V případě plně náhodných pozic se kontrolují kolize s pomocí knihovny https://trimsh.org/trimesh.html[trimesh], aby se minimalizovalo prolínání modelů do sebe.
+Pro generaci pomocí vzorkování Poissonova disku byla použita knihovna https://pypi.org/project/poisson-disc/[poisson-disc].
+V obou případech jsou vygenerované rotace zcela náhodné a způsob generace rotace tak nelze parametrizovat.
+
+Pokud byla zvolena možnost použití simulací, jsou vygenerované pozice použity jako výchozí hodnoty pro fyzikální engine https://pybullet.org/wordpress/[PyBullet], s pomocí kterého je simulace provedena.
+
+Poté jsou pomocí afinních transformací dopočítány nové pozice a rotace úchopových bodů na základě jejich lokálních transformací a nových globálních transformací daného modelu.
+
+Poté je dle rozměrů zájmové oblasti dopočítána pozice kamery a výsledné hodnoty jsou posléze převedeny do slovníku.
+Tento slovník je poté převeden do řetězce JSON, zabalen do dalšího řetězce JSON s informacemi o úspěchu operace a odeslán do fronty.
+
+[NOTE]
+====
+Do této části přichází požadavky na generaci scén jedna po druhé.
+Součáctí požadavku na generaci scény je tedy i její index, aby bylo poté možné výsledek namapovat na straně Spring Boot.
+====
