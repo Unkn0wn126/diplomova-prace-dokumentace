@@ -3,7 +3,6 @@ ifndef::imagesdir[:imagesdir: ../../images]
 [#sec:technicalDocumentationOfGUI]
 = Technická dokumentace grafické části aplikace
 
-
 V této sekci se nachází technická dokumentace grafické části aplikace vytvořené v Unity.
 Tato část byla vytvořena ve verzi Unity 2022.3.0f1.
 
@@ -56,7 +55,88 @@ Projekt by měl být nyní plně funkční a připravený k dalším úpravám.
 
 [#sec:structureOfUnityProject]
 === Struktura projektu v Unity
-// základní popis struktury projektu (vlastně jako to je v textu...)
+
+.Základní struktura projektu v Unity
+[cols=2, options="header",id="tab:structureOfProjectCreatedInUnity.packages",options=unbreakable]
+|===
+
+|Název balíčku
+|Oblast
+
+|Common
+|Funkce používané napříč aplikací
+
+|Core
+|Funkce související s hlavními funkcemi aplikace
+
+|Profiling
+|Funkce související s testováním výkonu aplikace
+
+|===
+
+.Struktura složky Common
+[cols=2, options="header",id="tab:structureOfProjectCreatedInUnity.commonFolderStructure",options=unbreakable]
+|===
+
+|Název balíčku
+|Oblast
+
+|Commands
+|Obsluha požadavků ve formě objektů
+
+|Convertors
+|Definice rozhraní pro konverzi mezi doménou a DTO
+
+|DI
+|Nastavení Dependency Injection kontejneru
+
+|Enums
+|Definice výčtu s~chováním
+
+|EventSystem
+|Systém událostí aplikace
+
+|FileSelection
+|Výčet hodnot pro výběr souborů
+
+|GUI
+|Obecné grafické komponenty
+
+|Logging
+|Logování v~aplikaci
+
+|ScreensManaging
+|Správa obrazovek
+
+|Serialization
+|Definice rozhraní pro serializaci
+
+|===
+
+.Struktura složky Core
+[cols=2, options="header",id="tab:structureOfProjectCreatedInUnity.coreFolderStructure",options=unbreakable]
+|===
+
+|Název balíčku
+|Oblast
+
+|BackendConnection
+|Komunikace s backendem
+
+|Models
+|Správa modelů a úchopových bodů
+
+|ProjectContext
+|Správa kontextu projektu
+
+|SceneDefinition
+|Správa definice scén
+
+|Scenes
+|Správa scén
+
+|===
+
 [NOTE]
 ====
 V kódu samotném nebyly vytvořeny dokumentační komentáře.
