@@ -492,5 +492,5 @@ Tento slovník je poté převeden do řetězce JSON, zabalen do dalšího řetě
 [NOTE]
 ====
 Do této části přichází požadavky na generaci scén jedna po druhé.
-Součáctí požadavku na generaci scény je tedy i její index, aby bylo poté možné výsledek namapovat na straně Spring Boot.
+Součástí požadavku na generaci scény je tedy i její index, aby bylo poté možné výsledek namapovat na straně Spring Boot.
 ====
