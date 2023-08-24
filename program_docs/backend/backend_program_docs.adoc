@@ -9,6 +9,10 @@ Skládá se konkrétně ze dvou služeb, které spolu komunikují pomocí broker
 První služba je implementována ve frameworku Spring Boot 3.1.0 a poskytuje API pro komunikaci s frontendem (tzn. grafickou částí aplikace).
 Druhá služba je implementována v jazyce Python 3.11 a vykonává samotné operace načítání modelů ze souboru a generace scén.
 
+Pro obě vytvořené služby byl vytvořen soubor Dockerfile, aby je bylo možné použít v Dockeru.
+V případě Spring Boot služby byl tento soubor nastavený tak, aby se vždy provedla kompilace a nedocházelo tak k situacím, kdy se po provedení změn na kompilaci před jejím spuštěním v Dockeru zapomene.
+Vytvořené obrazy Dockeru jsou poté využívány v souboru `docker-compose.dev.yml`, s jehož pomocí lze poté celý backend spustit jediným příkazem (viz <<sec:launchBackend>>).
+
 [#sec:technicalDocumentationOfSpringBoot]
 == Technická dokumentace služby ve Spring Boot
 Tato služba byla vytvořena ve framevorku Spring Boot 3.1.0 pod Oracle OpenJDK 20.0.1 s úrovní jazyka Java 17.

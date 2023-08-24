@@ -10,8 +10,7 @@ V této sekci je popsán způsob práce s backendem aplikace pro koncového uži
 == Spuštění backendu
 
 Backend lze spustit tradičním způsobem lokálně či pomocí Dockeru.
-V prvním případě je potřeba zajistit instanci RabbitMQ a případně poupravit nastavení v application.yml pro projekt ve Springu a soubor .env pro projekt v Pythonu.
-// TODO popis .env nastavení pro Python v technické dokumentaci?
+V prvním případě je potřeba zajistit instanci RabbitMQ a případně poupravit nastavení v application.yml pro projekt ve Spring Boot (viz <<#sec:attributesInApplicationYml>>) a soubor .env pro projekt v Pythonu (viz <<#sec:attributesInEnvFile>>).
 Ve druhém případě stačí navigovat příkazovým řádkem to složky se souborem `docker-compose.dev.yml` a zadat příkaz `docker-compose -f docker-compose.dev.yml up –build`.
 Po spuštění tohoto příkazu by měl být backend připraven k použití.
 
