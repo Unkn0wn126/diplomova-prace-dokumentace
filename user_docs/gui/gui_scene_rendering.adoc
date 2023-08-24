@@ -57,7 +57,7 @@ Po dokončení operace zůstává dialog pro nastavení vykreslení otevřený a
 
 [NOTE]
 ====
-Operaci vykreslování scén lze kdykoliv přerušit klávesovou zkratkou kbd:[Ctrl + Z].
+Operaci vykreslování scén lze kdykoliv přerušit klávesovou zkratkou kbd:[Ctrl + C].
 Scény, které se do té doby stihly vykreslit zůstanou v souborech zachovány.
 ====
 

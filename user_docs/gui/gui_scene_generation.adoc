@@ -94,5 +94,5 @@ image::2023-07-30T17-50-25-906Z.png[Dialog po úspěšném vygenerování scén,
 
 [NOTE]
 ====
-Operaci generování scén lze kdykoliv přerušit klávesovou zkratkou kbd:[Ctrl + Z]
+Operaci generování scén lze kdykoliv přerušit klávesovou zkratkou kbd:[Ctrl + C]
 ====

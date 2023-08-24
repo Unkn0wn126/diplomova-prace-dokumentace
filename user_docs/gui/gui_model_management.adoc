@@ -106,7 +106,7 @@ image::2023-07-30T10-02-34-476Z.png[Chyba při pokusu při pokusu o načtení mo
 
 [NOTE]
 ====
-Operaci načítání modelu s pomocí backendu lze kdykoliv přerušit klávesovou zkratkou kbd:[Ctrl + Z]
+Operaci načítání modelu s pomocí backendu lze kdykoliv přerušit klávesovou zkratkou kbd:[Ctrl + C]
 ====
 
 V případě pokusu o načtení nevalidního souboru se zobrazí dialogové okno s chybou (<<fig:modelManagement.importModelErrorDialog>>).
