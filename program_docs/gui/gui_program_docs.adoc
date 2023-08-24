@@ -1,16 +1,61 @@
 ifndef::imagesdir[:imagesdir: ../../images]
 
 [#sec:technicalDocumentationOfGUI]
-= Technická dokumentace grafického rozhraní
+= Technická dokumentace grafické části aplikace
 
 
 V této sekci se nachází technická dokumentace grafické části aplikace vytvořené v Unity.
+Tato část byla vytvořena ve verzi Unity 2022.3.0f1.
 
 [#sec:initialLoadProjectInUnity]
 == První načtení projektu do Unity
+Nejprve vytvořte standardní projekt ze šablony 3D Core.
 
-// celý proces i s obrázky...
+image::2023-08-24T01-01-51-006Z.png[] 
 
+Poté jej otevřete a z lišty s menu vyberte nabídku Asset > Import Package > Custom Package...
+
+image::2023-08-24T01-05-03-450Z.png[] 
+
+V dialogu vyberte soubor dp_frontend.unitypackage (v příloze k této práci je ve složce `frontend/package/`) a klikněte na tlačítko btn:[Otevřít].
+Zobrazí se okno Import Unity Package.
+V tomto okně vyberte vše a stiskněte tlačítko btn:[Import].
+
+image::2023-08-24T01-07-34-615Z.png[] 
+
+V tomto bodě budou naimportovány zdrojové kódy a assety vytvořené pro tuto aplikaci.
+Aplikace má však další závislosti, které je potřeba též doinstalovat.
+
+Nejprve nainstalujte knihovnu https://github.com/Mathijs-Bakker/Extenject[Extenject] stejným způsobem jako jste provedli v případě předešlého balíčku.
+Použita byla verze 9.2.1.
+
+Poté stejným způsobem nainstalujte knihovnu https://github.com/Cysharp/UniTask[UniTask].
+V této aplikaci byla použita verze 2.3.3.
+
+Poté nainstalujte knihovnu https://github.com/yasirkula/UnitySimpleFileBrowser.git[UnitySimpleFileBrowser].
+V tomto případě již jde využít Package Manager v nabídce Window > Package Manager.
+Zde stiskněte tlačítko btn:[+] a vyberte nabídku Add package from Git url..., do pole vložte následující hodnotu: `https://github.com/yasirkula/UnitySimpleFileBrowser.git` a stiskněte tlačítko btn:[Add]
+
+image::2023-08-24T01-16-42-448Z.png[] 
+
+image::2023-08-24T01-16-57-217Z.png[] 
+
+Stejnou operaci proveďte také v případě https://github.com/itisnajim/SocketIOUnity.git[SocketIOUnity] (hodnota pro vložení: `https://github.com/itisnajim/SocketIOUnity.git`).
+
+Nakonec nainstalujte stejným způsobem knihovnu Newtonsoft JSON.
+Hodnota pro vložení je následující: `com.unity.nuget.newtonsoft-json@3.0`.
+
+Poté otevřete složku Scenes a dvakrát poklepejte levým tlačítkem myši na scénu MainScene.
+Zobrazí se dialog umožňující importovat balíček TextMeshPro.
+Klikněte na tlačítko btn:[Import TMP Essentials].
+
+image::2023-08-24T01-23-44-256Z.png[] 
+
+Stiskněte tlačítko Play pro vyzkoušení, zda kompilace proběhne v pořádku.
+Projekt by měl být nyní plně funkční a připravený k dalším úpravám.
+
+[#sec:structureOfUnityProject]
+=== Struktura projektu v Unity
 // základní popis struktury projektu (vlastně jako to je v textu...)
 [NOTE]
 ====
@@ -18,6 +63,42 @@ V kódu samotném nebyly vytvořeny dokumentační komentáře.
 Při jeho tvorbě byla vynaložena snaha jej zdokumentovat již samotnou strukturou a názvy jednotlivých tříd a atributů.
 ====
 
-// základní popis scény v projektu
+Výchozí nastavení projektu lze pozměnit modifikací souboru `ProjectContextDefaultState` ve složce `Assets/App/Core/ProjectContext/Config/`.
 
-// jak aktualizovat soubory této dokumentace v Unity...
+Aktualizace přiložené dokumentace se provede vložením souboru index.html a složky images do složky StreamingAssets.
+Toto lze provést i v případě hotového buildu mimo editor.
+
+[#sec:structureOfSceneInUnityProject]
+=== Struktura scény v projektu v Unity
+Hlavní struktura scény je vyobrazena na následujícím obrázku.
+
+image::2023-08-24T01-28-54-981Z.png[] 
+
+Obsah scény se z větší části nachází pod objektem GUI, který obsahuje komponentu Canvas.
+
+Objekt SceneContext obsahuje skript pro ovládání Dependency Injection a pro fungování je tak nutné ho mít ve scéně.
+
+Pod objektem Managers se nachází jediný objekt jménem ScreensManager.
+Jeho účel spočívá v de/aktivaci objektů ve scéně dle aktivního režimu obrazovky.
+
+Objekt ScenesData pod sebou skrývá směrové světlo scény a dva objekty pro správu zobrazení modelů a scén ve scéně Unity.
+Objekt ModelViewData slouží k zobrazení modelu a úchopových bodů na obrazovce jeho správy.
+Ovládání kamery v rámci tohoto režimu obrazovky se též nachází pod tímto modelem.
+
+O zobrazení scény s náhodně rozmístěnými modely se stará objekt ScenesViewData, který pod sebou drží kameru snímající scénu ze svrchního pohledu a další dva objekty.
+Tyto dva objekty se starají o zobrazení náhodně rozmístěných modelů a jejich úchopových bodů, díky čemuž k tomuto účelu není potřeba spravovat velké množství objektů.
+Jelikož je v daném okamžiku možné zobrazit pouze jednu scénu zároveň, jsou používány pro zobrazení všech scén.
+
+Pod objektem GUI je schována celá hierarchie uživatelského rozhraní.
+Jeho potomky jsou StatePanel, MainWindow, MenuBar a PopupWindowsManager.
+StatePanel pod sebou drží hierarchii stavového panelu.
+Pod MainWindow se nachází obrazovka pro správu modelu, obrazovka pro správu scén a konzole.
+MenuBar skrývá lištu s menu včetně všech jednotlivých položek menu.
+
+PopupWindowsManager slouží pro správu vyskakovacích oken a ta okna, která se vyskytují v daný okamžik pouze jednou drží přímo jako své potomky i mimo běh aplikace.
+
+Objekt EventSystem byl přidán automaticky Unity při vytvoření objektu typu Canvas.
+
+Objekt ProfilingContext je aktivní pouze v rámci editoru a slouží pro snímání hodnot využití některých zdrojů.
+Snímání lze započít a ukončit klávesou F12.
+V buildu mimo editor jej však použít nelze.
